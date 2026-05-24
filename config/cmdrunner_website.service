@@ -1,0 +1,14 @@
+[Unit]
+Description=CmdRunner Website (Gunicorn)
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/cmdrunner-website
+Environment="PATH=/opt/cmdrunner-website/venv/bin"
+ExecStart=/opt/cmdrunner-website/venv/bin/gunicorn --workers 3 --bind unix:/opt/cmdrunner-website/cmdrunner.sock server:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

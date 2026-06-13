@@ -26,12 +26,12 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7D4KCNFLXT"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-7D4KCNFLXT');
     </script>
 
     <script type="application/ld+json">
@@ -82,15 +82,12 @@
         <nav class="nav-shell fixed top-0 z-50 w-full">
             <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
                     <a href="#" class="flex items-center gap-3" aria-label="CmdRunner home">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="CmdRunner logo" class="h-10 w-10 rounded-xl">
+                    <img src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="CmdRunner logo" class="h-10 w-10 rounded-xl">
                     <span class="text-lg font-black tracking-tight">CmdRunner</span>
                 </a>
                 <div class="hidden items-center gap-7 text-sm font-semibold text-slate-300 md:flex">
-                    <a href="#demo" class="hover:text-white">Demo</a>
-                    <a href="#workflow" class="hover:text-white">Workflow</a>
-                    <a href="#features" class="hover:text-white">Features</a>
-                    <a href="#proof" class="hover:text-white">Proof</a>
-                    <a href="#faq" class="hover:text-white">FAQ</a>
+                    <a href="/why" class="hover:text-white transition">Why CmdRunner</a>
+                    <a href="/resource" class="hover:text-white transition">Resource</a>
                     <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-primary rounded-full px-5 py-2.5 font-black transition inline-block">Request beta</a>
                 </div>
             </div>
@@ -101,7 +98,7 @@
                 <div class="mx-auto max-w-7xl">
                     <div class="top-banner reveal mx-auto mb-10 flex max-w-3xl items-center justify-center gap-3 rounded-full px-4 py-2 text-center text-sm font-semibold text-slate-200">
                         <span class="h-2 w-2 rounded-full bg-[var(--lime)]"></span>
-                        New: document-to-browser test execution for AI-first QA teams
+                        Agentic AI-powered test automation — now in beta
                     </div>
 
                     <div class="mx-auto max-w-6xl text-center">
@@ -109,84 +106,31 @@
                             Testing at the speed of <span class="color-word">thought.</span>
                         </h1>
                         <p class="reveal mx-auto mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl" style="animation-delay: 0.08s;">
-                            CmdRunner automates your web application testing with distributed agents and real-time execution. Built for QA engineers who value speed and reliability.
+                            Reduce testing costs by 70%. Ship releases 10× faster. Eliminate script maintenance entirely. CmdRunner's Agentic AI executes your test cases from documents reducing time spent on testing so more engineering time can be allocated to product development.
                         </p>
                         <div class="reveal mt-9 flex flex-col justify-center gap-3 sm:flex-row" style="animation-delay: 0.14s;">
                             <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-primary rounded-full px-8 py-4 text-base font-black transition inline-block">Request beta</a>
-                            <button onclick="trackDemo();" class="btn-secondary rounded-full px-8 py-4 text-base font-black transition">See product animation</button>
-                        </div>
-                    </div>
-
-                    <div class="reveal mx-auto mt-14 max-w-6xl" style="animation-delay: 0.2s;">
-                        <!-- Terminal Visual -->
-                        <div class="w-full max-w-5xl mx-auto rounded-xl overflow-hidden glass-panel shadow-2xl" style="border: 1px solid rgba(255,255,255,0.14); background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035)), #0b0f18; box-shadow: 0 40px 110px rgba(0,0,0,0.52), inset 0 1px 0 rgba(255,255,255,0.12);">
-                            <div class="terminal-header px-4 py-3 flex items-center justify-between" style="background: #171f33; border-bottom: 1px solid #2d3449;">
-                                <div class="flex gap-2">
-                                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-                                </div>
-                                <div class="font-mono text-xs text-slate-400 opacity-50">cmdrunner --watch</div>
-                                <div class="w-12"></div>
-                            </div>
-                            <div class="p-6 text-left font-mono text-sm space-y-2 min-h-[400px] relative text-slate-300">
-                                <div class="flex gap-4">
-                                    <span style="color: #4edea3;">➜</span>
-                                    <span>cmdrunner deploy --suite "Checkout_Flow_v2"</span>
-                                </div>
-                                <div style="color: #918fa1;">Initializing distributed agents... done (1.2s)</div>
-                                <div style="color: #918fa1;">Provisioning 12 headless Chrome instances...</div>
-                                <div class="flex gap-4 items-center">
-                                    <span class="material-symbols-outlined text-sm" style="color: #4edea3;">check_circle</span>
-                                    <span>Agent-EU-1: Running Test 'Auth_Success' [PASS]</span>
-                                </div>
-                                <div class="flex gap-4 items-center">
-                                    <span class="material-symbols-outlined text-sm" style="color: #4edea3;">check_circle</span>
-                                    <span>Agent-US-West: Running Test 'Payment_Stripe' [PASS]</span>
-                                </div>
-                                <div class="flex gap-4 items-center">
-                                    <span class="animate-pulse w-2 h-2 rounded-full" style="background-color: #c3c0ff;"></span>
-                                    <span style="color: #c3c0ff;">Agent-AS-1: Running Test 'Inventory_Sync' ...</span>
-                                </div>
-                                <!-- Decorative Mock UI Element -->
-                                <div class="absolute bottom-6 right-6 w-72 h-48 rounded-lg p-4 shadow-xl" style="background: #171f33; border: 1px solid rgba(255,255,255,0.14);">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <span class="font-bold text-slate-200">Real-time Stream</span>
-                                        <span class="px-2 py-0.5 rounded text-[10px] uppercase font-bold tracking-tighter" style="background: rgba(255, 180, 171, 0.15); color: #ffb4ab;">Live</span>
-                                    </div>
-                                    <div class="grid grid-cols-2 gap-2 h-24">
-                                        <div class="rounded border border-white/10 flex items-center justify-center" style="background: #0b1326;">
-                                            <span class="material-symbols-outlined" style="color: #918fa1;">browser_updated</span>
-                                        </div>
-                                        <div class="rounded border border-white/10 flex items-center justify-center" style="background: #0b1326;">
-                                            <span class="material-symbols-outlined" style="color: #918fa1;">pageview</span>
-                                        </div>
-                                    </div>
-                                    <div class="mt-4 w-full h-1 rounded overflow-hidden" style="background: #2d3449;">
-                                        <div class="w-2/3 h-full" style="background: #c3c0ff;"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
 
                     <div class="logo-rail mt-12">
                         <div class="logo-track flex w-max gap-4">
                             <div class="flex gap-4">
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Regression</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Smoke tests</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Checkout QA</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Admin flows</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">PDF cases</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Visual checks</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Salesforce QA</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">ERP testing</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Regression suites</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Checkout flows</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Excel test cases</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Admin portals</span>
                             </div>
                             <div class="flex gap-4" aria-hidden="true">
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Regression</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Smoke tests</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Checkout QA</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Admin flows</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">PDF cases</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Visual checks</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Salesforce QA</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">ERP testing</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Regression suites</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Checkout flows</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Excel test cases</span>
+                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Admin portals</span>
                             </div>
                         </div>
                     </div>
@@ -197,8 +141,8 @@
                 <div class="mx-auto max-w-6xl">
                     <div class="mb-10 max-w-3xl">
                         <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--cyan)]">Product demo</p>
-                        <h2 class="text-4xl font-black md:text-6xl">Watch the AI read a test case and execute it in the browser.</h2>
-                        <p class="mt-5 text-lg leading-8 text-slate-400">The demo starts automatically when this section scrolls into view.</p>
+                        <h2 class="text-4xl font-black md:text-6xl">See the AI read a test case and execute it in a real browser.</h2>
+                        <p class="mt-5 text-lg leading-8 text-slate-400">Watch CmdRunner parse a document, understand each step's intent, navigate the application, perform actions, and validate results — all without a single line of code.</p>
                     </div>
                     <div class="video-frame overflow-hidden rounded-[1.75rem] p-3 md:p-4">
                         <div class="video-shell overflow-hidden rounded-[1.25rem]">
@@ -216,70 +160,71 @@
                 </div>
             </section>
 
-            <section id="workflow" class="section-muted px-5 py-24">
+            <section id="platform" class="section-muted px-5 py-24">
                 <div class="mx-auto max-w-7xl">
                     <div class="mb-12 max-w-3xl">
-                        <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--cyan)]">Software testing lifecycle</p>
-                        <h2 class="text-4xl font-black md:text-6xl">One AI agent across design, execution, and reporting.</h2>
+                        <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--cyan)]">How it works</p>
+                        <h2 class="text-4xl font-black md:text-6xl">From document to done — in five steps.</h2>
+                        <p class="mt-5 text-lg leading-8 text-slate-400">CmdRunner's Agentic AI understands the intent behind your test steps and adapts dynamically while interacting with your application.</p>
                     </div>
                     <div class="grid gap-5 md:grid-cols-5">
                         <article class="workflow-card rounded-2xl p-5">
                             <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">01</span>
-                            <h3 class="font-black">Test strategy</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Read release goals and coverage intent.</p>
+                            <h3 class="font-black">Upload</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">Upload your test cases from Excel, Word, or PDF — the formats your team already uses.</p>
                         </article>
                         <article class="workflow-card rounded-2xl p-5">
                             <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">02</span>
-                            <h3 class="font-black">Test design</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Convert documents into executable flows.</p>
+                            <h3 class="font-black">Understand</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">The AI parses each step, understands the intent, and maps it to real browser actions.</p>
                         </article>
                         <article class="workflow-card rounded-2xl p-5">
                             <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">03</span>
-                            <h3 class="font-black">Creation</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Generate browser actions from plain English.</p>
+                            <h3 class="font-black">Execute</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">The agent interacts with your app like a human — clicking, typing, and navigating flows.</p>
                         </article>
                         <article class="workflow-card rounded-2xl p-5">
                             <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">04</span>
-                            <h3 class="font-black">Execution</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Run live sessions against your app.</p>
+                            <h3 class="font-black">Validate</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">Results are checked against your expected outcomes with visual and content assertions.</p>
                         </article>
                         <article class="workflow-card rounded-2xl p-5">
                             <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">05</span>
                             <h3 class="font-black">Report</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Return pass/fail evidence and defects.</p>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">Get screenshots, step-by-step logs, and pass/fail evidence — automatically.</p>
                         </article>
                     </div>
                 </div>
             </section>
 
-            <section id="features" class="px-5 py-24">
+            <section id="why" class="px-5 py-24">
                 <div class="mx-auto max-w-7xl">
                     <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
                         <div>
                             <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--lime)]">AI-native QA</p>
-                            <h2 class="text-4xl font-black md:text-6xl">Write tests in plain English. Let the browser agent handle the rest.</h2>
-                            <p class="mt-6 text-lg leading-8 text-slate-400">Inspired by modern AI testing products, CmdRunner centers the workflow around natural language, visual recognition, self-healing execution, and trustworthy assertions.</p>
+                            <h2 class="text-4xl font-black md:text-6xl">No scripting. No selectors. No maintenance.</h2>
+                            <p class="mt-6 text-lg leading-8 text-slate-400">Instead of relying on brittle selectors or complex automation frameworks, CmdRunner's Agentic AI understands the intent behind each test step and adapts dynamically when your UI changes.</p>
                         </div>
                         <div class="grid gap-5 md:grid-cols-2">
                             <article class="feature-box rounded-2xl p-6">
                                 <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">NL</div>
-                                <h3 class="text-xl font-black">Plain-English test creation</h3>
-                                <p class="mt-4 leading-7 text-slate-400">Describe the flow in your existing QA document. CmdRunner turns it into a runnable browser session.</p>
+                                <h3 class="text-xl font-black">Document-driven testing</h3>
+                                <p class="mt-4 leading-7 text-slate-400">Upload test cases from Excel, Word, or PDF. The AI reads and executes them — no code to write, no framework to learn.</p>
                             </article>
                             <article class="feature-box rounded-2xl p-6">
                                 <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">VR</div>
-                                <h3 class="text-xl font-black">Visual recognition</h3>
-                                <p class="mt-4 leading-7 text-slate-400">The agent reads labels, content, form state, and results instead of depending only on DOM selectors.</p>
+                                <h3 class="text-xl font-black">Human-like interaction</h3>
+                                <p class="mt-4 leading-7 text-slate-400">The agent reads labels, recognizes buttons, fills forms, and navigates multi-step workflows — just like a real QA engineer would.</p>
                             </article>
                             <article class="feature-box rounded-2xl p-6">
                                 <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">SH</div>
-                                <h3 class="text-xl font-black">Self-healing interactions</h3>
-                                <p class="mt-4 leading-7 text-slate-400">When your UI shifts, intent-based actions adapt to the new surface and keep useful tests running.</p>
+                                <h3 class="text-xl font-black">Self-healing execution</h3>
+                                <p class="mt-4 leading-7 text-slate-400">When your UI changes, the AI adapts automatically. It reasons about intent, not selectors — so your tests keep running without fixes.</p>
                             </article>
                             <article class="feature-box rounded-2xl p-6">
                                 <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">AS</div>
-                                <h3 class="text-xl font-black">AI-powered assertions</h3>
-                                <p class="mt-4 leading-7 text-slate-400">Validate screenshots, text, page state, and expected behavior from the same natural-language test case.</p>
+                                <h3 class="text-xl font-black">Works across enterprise apps</h3>
+                                <p class="mt-4 leading-7 text-slate-400">From Salesforce to ERP systems to internal business tools — test the complex workflows that traditional automation can't handle.</p>
                             </article>
                         </div>
                     </div>
@@ -291,31 +236,32 @@
                     <div class="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
                         <div>
                             <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--coral)]">Impact</p>
-                            <h2 class="max-w-3xl text-4xl font-black md:text-6xl">Give QA teams a faster path to reliable coverage.</h2>
+                            <h2 class="max-w-3xl text-4xl font-black md:text-6xl">Move faster. Reduce manual work. Focus on quality.</h2>
+                            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-400">CmdRunner enables teams to ship with confidence — without spending weeks writing and maintaining automation scripts.</p>
                         </div>
                         <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-secondary w-fit rounded-full px-6 py-3 font-black transition inline-block">Request beta</a>
                     </div>
                     <div class="grid gap-5 md:grid-cols-3">
                         <article class="quote-card rounded-2xl p-6">
                             <div class="text-5xl font-black text-[var(--lime)]">70%</div>
-                            <h3 class="mt-4 text-xl font-black">less time writing automation</h3>
-                            <p class="mt-4 leading-7 text-slate-400">Replace repetitive script authoring with document-driven browser sessions.</p>
+                            <h3 class="mt-4 text-xl font-black">less time on script maintenance</h3>
+                            <p class="mt-4 leading-7 text-slate-400">Eliminate the effort of writing, debugging, and fixing brittle selectors every time the UI changes.</p>
                         </article>
                         <article class="quote-card rounded-2xl p-6">
-                            <div class="text-5xl font-black text-[var(--cyan)]">99%</div>
-                            <h3 class="mt-4 text-xl font-black">fewer noisy checks</h3>
-                            <p class="mt-4 leading-7 text-slate-400">Focus on visible outcomes and meaningful assertions instead of brittle implementation details.</p>
+                            <div class="text-5xl font-black text-[var(--cyan)]">10×</div>
+                            <h3 class="mt-4 text-xl font-black">faster test creation</h3>
+                            <p class="mt-4 leading-7 text-slate-400">Upload documents instead of writing code. Turn existing test cases into live browser sessions instantly.</p>
                         </article>
                         <article class="quote-card rounded-2xl p-6">
-                            <div class="text-5xl font-black text-[var(--coral)]">8x</div>
-                            <h3 class="mt-4 text-xl font-black">more release confidence</h3>
-                            <p class="mt-4 leading-7 text-slate-400">Run critical flows repeatedly without turning every UI change into a test maintenance task.</p>
+                            <div class="text-5xl font-black text-[var(--coral)]">100%</div>
+                            <h3 class="mt-4 text-xl font-black">coverage of complex workflows</h3>
+                            <p class="mt-4 leading-7 text-slate-400">Automate Salesforce, ERP, and internal tools — the enterprise flows traditional automation can't reach.</p>
                         </article>
                     </div>
                 </div>
             </section>
 
-            <section id="faq" class="section-muted px-5 py-24">
+            <section id="resource" class="section-muted px-5 py-24">
                 <div class="mx-auto max-w-4xl">
                     <div class="mb-10 text-center">
                         <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--lime)]">FAQ</p>
@@ -328,16 +274,25 @@
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>CmdRunner parses the document, identifies steps and expected outcomes, then uses an autonomous browser agent to perform the workflow and validate what appears on screen.</p>
+                                <p>You upload a test case document — Excel, Word, or PDF. CmdRunner's Agentic AI reads it, understands the intent of each step, opens a real browser, and executes the workflow by interacting with your application like a human user. It performs actions, validates results against your expected outcomes, and generates execution reports automatically.</p>
                             </div>
                         </div>
                         <div class="faq-item rounded-2xl">
                             <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
-                                <span>Why is this different from Selenium or Playwright scripts?</span>
+                                <span>How is this different from Selenium or Playwright?</span>
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Traditional automation usually depends on code and selectors. CmdRunner starts with human-readable intent and uses visual reasoning, which reduces maintenance when interfaces change.</p>
+                                <p>Traditional automation depends on code and brittle selectors that break when the UI changes. CmdRunner uses an Agentic AI approach — instead of following predefined scripts, the AI understands the intent behind each test step and adapts dynamically. This means zero scripting, zero selector maintenance, and tests that keep working even as your application evolves.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item rounded-2xl">
+                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
+                                <span>Can CmdRunner test enterprise applications like Salesforce or ERP systems?</span>
+                                <span class="toggle-icon text-2xl">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Yes. CmdRunner is designed to handle complex workflows in enterprise applications — including Salesforce, ERP systems, and internal business tools. It interacts through the browser like a real user, so no API integrations or internal tooling are required.</p>
                             </div>
                         </div>
                         <div class="faq-item rounded-2xl">
@@ -346,16 +301,16 @@
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>The beta is focused on Word, Excel, and PDF test case documents. Structured test case tables work especially well.</p>
+                                <p>The beta supports Word (.docx), Excel (.xlsx), and PDF test case documents. Structured test case tables with clear steps and expected outcomes work especially well. No special formatting or templates are required.</p>
                             </div>
                         </div>
                         <div class="faq-item rounded-2xl">
                             <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
-                                <span>Can it handle complex workflows?</span>
+                                <span>Who is CmdRunner built for?</span>
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Yes. CmdRunner is designed for multi-step web workflows including login, navigation, forms, conditional states, and visible result validation.</p>
+                                <p>CmdRunner is built for QA engineers, software testing teams, developers, SaaS companies, and enterprises that want faster and more scalable testing without spending weeks writing and maintaining automation scripts. It's especially useful for teams testing complex business workflows where traditional automation tools become difficult to maintain.</p>
                             </div>
                         </div>
                     </div>
@@ -374,9 +329,9 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-6 text-sm font-semibold">
                     <div class="flex gap-6">
-                        <a href="#workflow" class="hover:text-white">Workflow</a>
-                        <a href="#features" class="hover:text-white">Features</a>
-                        <a href="#faq" class="hover:text-white">FAQ</a>
+                        <a href="#platform" class="hover:text-white">Workflow</a>
+                        <a href="/why" class="hover:text-white">Features</a>
+                        <a href="/resource" class="hover:text-white">FAQ</a>
                     </div>
                     <div class="flex gap-6 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-6">
                         <a href="/privacy" class="hover:text-white transition">Privacy Policy</a>
@@ -389,10 +344,7 @@
         </footer>
     </div>
 
-    <!-- GA config (page-specific) -->
-    <script>
-        // GA tracking and accordion/video are in main.js
-    </script>
+    <!-- GA tracking helpers and accordion/video are in main.js -->
 
 </body>
 </html>

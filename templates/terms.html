@@ -20,11 +20,11 @@
             transition: color 0.2s ease;
         }
         .toc-link:hover {
-            color: var(--cyan);
+            color: var(--blue);
         }
 
         .legal-section {
-            border-left: 2px solid rgba(57,216,255,0.15);
+            border-left: 2px solid var(--line);
             padding-left: 1.5rem;
             margin-bottom: 3rem;
         }
@@ -44,63 +44,61 @@
         }
 
         .highlight-box {
-            border: 1px solid rgba(255,255,255,0.12);
-            background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.032)), var(--panel);
+            border: 1px solid var(--line);
+            background: #f9fafb;
             border-radius: 1rem;
             padding: 1.25rem 1.5rem;
             margin: 1rem 0;
-        }
-
-        .final-note {
-            border: 1px solid rgba(167,124,255,0.25);
-            background: rgba(167,124,255,0.06);
-            border-radius: 1rem;
-            padding: 1.5rem 2rem;
         }
 
         @media (max-width: 768px) {
             .legal-section { padding-left: 1rem; }
         }
     </style>
-    <script src="{{ url_for('static', filename='assets/js/main.js') }}" defer></script>
 </head>
 <body>
-    <div class="page-aurora min-h-screen">
-    <nav class="nav-shell fixed top-0 z-50 w-full">
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-            <a href="/" class="flex items-center gap-3" aria-label="CmdRunner home">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="CmdRunner logo" class="h-10 w-10 rounded-xl">
-                <span class="text-lg font-black tracking-tight">CmdRunner</span>
-            </a>
-            <div class="hidden items-center gap-7 text-sm font-semibold text-slate-300 md:flex">
-                <a href="/#demo" class="hover:text-white">Demo</a>
-                <a href="/#workflow" class="hover:text-white">Workflow</a>
-                <a href="/#features" class="hover:text-white">Features</a>
-                <a href="/#proof" class="hover:text-white">Proof</a>
-                <a href="/#faq" class="hover:text-white">FAQ</a>
-                <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-primary rounded-full px-5 py-2.5 font-black transition inline-block">Request beta</a>
+    <!-- Announcement Banner -->
+    <div id="cta-banner" class="sticky top-0 z-[60] relative" style="background: linear-gradient(135deg, #2563EB, #1D4ED8); cursor: pointer;" onclick="window.open('https://app.cmdrunner.com/register','_blank')">
+        <div class="mx-auto max-w-7xl flex items-center justify-center gap-4 px-5 py-3 text-center">
+            <div>
+                <span class="text-sm md:text-base font-semibold text-white">Cut QA Automation Costs by Up to 80%</span>
+                <span class="hidden sm:inline text-sm text-blue-100 ml-2">— Execute tests directly from documents — without writing or maintaining scripts.</span>
             </div>
-            <a href="/" class="flex items-center gap-2 text-sm font-bold md:hidden" style="color: var(--cyan);">&larr; Home</a>
+            <svg class="w-4 h-4 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+    </div>
+
+    <div class="page-aurora min-h-screen">
+    <nav class="nav-shell sticky top-[44px] z-50 w-full">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
+            <a href="/" class="flex items-center gap-3" aria-label="CmdRunner home">
+                <img src="{{ url_for('static', filename='images/logo-with-name.jpeg') }}" alt="CmdRunner" class="h-[56px] w-auto">
+            </a>
+            <div class="hidden items-center gap-7 text-sm font-medium md:flex" style="color: var(--dim);">
+                <a href="/why" class="hover:text-[#2563EB] transition">Why CmdRunner</a>
+                <a href="/resource" class="hover:text-[#2563EB] transition">Resource</a>
+                <a href="https://calendar.app.google/s2G5stLiU99N6u78A" target="_blank" class="btn-primary rounded-lg px-5 py-2.5 transition inline-block">Book a Demo</a>
+            </div>
         </div>
     </nav>
 
-    <main class="mx-auto max-w-4xl px-5 pt-28 pb-20">
+    <main class="mx-auto max-w-4xl px-5 pt-12 pb-20">
         <!-- Header -->
         <div class="mb-12">
-            <p class="mb-3 text-sm font-black uppercase tracking-[0.28em]" style="color: var(--lime);">Legal</p>
+            <p class="mb-3 text-sm font-black uppercase tracking-[0.28em]" style="color: var(--blue);">Legal</p>
             <h1 class="text-4xl font-black md:text-5xl">CmdRunner Complete Legal Framework Suite</h1>
-            <div class="mt-6 space-y-1 text-sm text-slate-400">
-                <p><span class="font-semibold text-slate-300">Product:</span> CmdRunner</p>
-                <p><span class="font-semibold text-slate-300">Operated By:</span> BotifyQA Solutions Private Limited</p>
-                <p><span class="font-semibold text-slate-300">Website:</span> <a href="https://cmdrunner.com" target="_blank">https://cmdrunner.com</a></p>
-                <p><span class="font-semibold text-slate-300">Support Email:</span> <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a></p>
-                <p><span class="font-semibold text-slate-300">Jurisdiction:</span> Chennai, Tamil Nadu, India</p>
+            <div class="mt-6 space-y-1 text-sm text-slate-500">
+                <p><span class="font-semibold text-slate-600">Product:</span> CmdRunner</p>
+                <p><span class="font-semibold text-slate-600">Operated By:</span> BotifyQA Solutions Private Limited</p>
+                <p><span class="font-semibold text-slate-600">Website:</span> <a href="https://cmdrunner.com" target="_blank">https://cmdrunner.com</a></p>
+                <p><span class="font-semibold text-slate-600">Support Email:</span> <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a></p>
+                <p><span class="font-semibold text-slate-600">Jurisdiction:</span> Chennai, Tamil Nadu, India</p>
             </div>
         </div>
 
         <!-- Table of Contents -->
         <div class="highlight-box mb-14">
-            <h2 class="text-lg font-black mb-4" style="color: var(--cyan);">Document Index</h2>
+            <h2 class="text-lg font-black mb-4" style="color: var(--blue);">Document Index</h2>
             <ol class="space-y-2 text-sm">
                 <li><a href="#tos" class="toc-link font-semibold">1. Terms of Service</a></li>
                 <li><a href="#ai-terms" class="toc-link font-semibold">2. AI Terms</a></li>
@@ -118,15 +116,15 @@
         <section id="tos" class="legal-section">
             <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color: var(--coral);">Section 1</p>
             <h2 class="text-3xl font-black mb-1">Terms of Service</h2>
-            <p class="text-sm text-slate-400 mb-8">Effective Date: May 24, 2026</p>
+            <p class="text-sm text-slate-500 mb-8">Effective Date: May 24, 2026</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.1 Introduction</h3>
-            <p class="leading-7 text-slate-300">Welcome to CmdRunner, an AI-powered automation and software testing platform operated by BotifyQA Solutions Private Limited ("Company", "CmdRunner", "we", "our", or "us"). These Terms of Service ("Terms") govern your access to and use of CmdRunner's websites, applications, APIs, AI systems, automation agents, browser automation infrastructure, reporting systems, and related services (collectively, the "Services").</p>
-            <p class="leading-7 text-slate-300 mt-3">By accessing or using the Services, you agree to these Terms. If you do not agree to these Terms, you may not use the Services.</p>
+            <p class="leading-7 text-slate-600">Welcome to CmdRunner, an AI-powered automation and software testing platform operated by BotifyQA Solutions Private Limited ("Company", "CmdRunner", "we", "our", or "us"). These Terms of Service ("Terms") govern your access to and use of CmdRunner's websites, applications, APIs, AI systems, automation agents, browser automation infrastructure, reporting systems, and related services (collectively, the "Services").</p>
+            <p class="leading-7 text-slate-600 mt-3">By accessing or using the Services, you agree to these Terms. If you do not agree to these Terms, you may not use the Services.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.2 About CmdRunner</h3>
-            <p class="leading-7 text-slate-300">CmdRunner is an AI-native automation platform that enables users to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner is an AI-native automation platform that enables users to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Execute software testing workflows</li>
                 <li>Automate browser interactions</li>
                 <li>Run end-to-end testing</li>
@@ -135,70 +133,70 @@
                 <li>Generate reports and execution analytics</li>
                 <li>Operate intelligent automation agents</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner uses adaptive AI execution systems that may dynamically retry, optimize, or modify execution strategies to improve automation reliability.</p>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner is designed to assist users with workflow automation but does not replace human oversight.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner uses adaptive AI execution systems that may dynamically retry, optimize, or modify execution strategies to improve automation reliability.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner is designed to assist users with workflow automation but does not replace human oversight.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.3 Eligibility</h3>
-            <p class="leading-7 text-slate-300">You must:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">You must:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Be at least 18 years old</li>
                 <li>Have authority to enter into legally binding agreements</li>
                 <li>Use the Services only in compliance with applicable laws</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">If using the Services on behalf of an organization, you represent that you have authority to bind that organization.</p>
+            <p class="leading-7 text-slate-600 mt-3">If using the Services on behalf of an organization, you represent that you have authority to bind that organization.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.4 Accounts</h3>
-            <p class="leading-7 text-slate-300">Users are responsible for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Users are responsible for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Maintaining account confidentiality</li>
                 <li>Securing credentials</li>
                 <li>Monitoring account activity</li>
                 <li>Ensuring authorized access only</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Users may not:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600 mt-3">Users may not:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Share accounts improperly</li>
                 <li>Sell or transfer accounts</li>
                 <li>Use false identities</li>
                 <li>Circumvent authentication systems</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner may suspend accounts suspected of unauthorized or abusive activity.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner may suspend accounts suspected of unauthorized or abusive activity.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.5 Subscription and Billing</h3>
-            <p class="leading-7 text-slate-300">CmdRunner operates using subscription and usage-based pricing.</p>
-            <p class="leading-7 text-slate-300 mt-3">Usage may be measured based on:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner operates using subscription and usage-based pricing.</p>
+            <p class="leading-7 text-slate-600 mt-3">Usage may be measured based on:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Number of test steps executed</li>
                 <li>Automation runs</li>
                 <li>Agent execution activity</li>
                 <li>API usage</li>
                 <li>Resource consumption</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Plans may include:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600 mt-3">Plans may include:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Free Trial (up to 50 test steps)</li>
                 <li>Startup Plans</li>
                 <li>Beta Access Programs</li>
                 <li>Enterprise Plans</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Unless otherwise stated:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600 mt-3">Unless otherwise stated:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Fees are non-refundable after the free trial period</li>
                 <li>Unused credits or steps do not roll over</li>
                 <li>Failure to pay may result in suspension</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner reserves the right to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner reserves the right to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Modify pricing</li>
                 <li>Adjust quotas</li>
                 <li>Introduce new billing models</li>
                 <li>Modify plan features</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Reasonable notice will be provided for material changes.</p>
+            <p class="leading-7 text-slate-600 mt-3">Reasonable notice will be provided for material changes.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.6 Customer Responsibilities</h3>
-            <p class="leading-7 text-slate-300">Customers are solely responsible for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Customers are solely responsible for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Reviewing automation outputs</li>
                 <li>Validating AI-generated actions</li>
                 <li>Ensuring authorization for tested systems</li>
@@ -207,31 +205,31 @@
                 <li>Securing credentials and secrets</li>
                 <li>Ensuring compliance with applicable laws</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Users must maintain human oversight over all automation activities.</p>
+            <p class="leading-7 text-slate-600 mt-3">Users must maintain human oversight over all automation activities.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.7 AI and Automation Disclaimer</h3>
-            <p class="leading-7 text-slate-300">CmdRunner uses AI systems and autonomous execution technologies.</p>
-            <p class="leading-7 text-slate-300 mt-3">Users acknowledge and agree that:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner uses AI systems and autonomous execution technologies.</p>
+            <p class="leading-7 text-slate-600 mt-3">Users acknowledge and agree that:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>AI-generated outputs may contain inaccuracies</li>
                 <li>Automation behavior may vary</li>
                 <li>AI agents may misinterpret instructions</li>
                 <li>Browser and application changes may affect reliability</li>
                 <li>Execution results are not guaranteed</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner does not guarantee:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner does not guarantee:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Perfect execution accuracy</li>
                 <li>Successful completion of every workflow</li>
                 <li>Continuous availability</li>
                 <li>Error-free outputs</li>
                 <li>Compatibility with all applications</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">All outputs and automation actions must be independently reviewed by users.</p>
+            <p class="leading-7 text-slate-600 mt-3">All outputs and automation actions must be independently reviewed by users.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.8 Adaptive AI Execution</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may utilize adaptive execution systems that improve workflow reliability through:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may utilize adaptive execution systems that improve workflow reliability through:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Prior execution analysis</li>
                 <li>Runtime optimization</li>
                 <li>Error recovery strategies</li>
@@ -239,22 +237,22 @@
                 <li>Contextual workflow refinement</li>
                 <li>Retry-based learning behavior</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner does not use customer content to train general-purpose foundation AI models unless explicitly disclosed and authorized.</p>
-            <p class="leading-7 text-slate-300 mt-3">Customers retain responsibility for reviewing all automation behavior and outputs.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner does not use customer content to train general-purpose foundation AI models unless explicitly disclosed and authorized.</p>
+            <p class="leading-7 text-slate-600 mt-3">Customers retain responsibility for reviewing all automation behavior and outputs.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.9 Permitted Usage</h3>
-            <p class="leading-7 text-slate-300">Users may use CmdRunner only for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Users may use CmdRunner only for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Authorized software testing</li>
                 <li>Internal workflow automation</li>
                 <li>Approved browser automation</li>
                 <li>Systems they own or are authorized to test</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Users are responsible for ensuring they possess all necessary rights and permissions.</p>
+            <p class="leading-7 text-slate-600 mt-3">Users are responsible for ensuring they possess all necessary rights and permissions.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.10 Prohibited Activities</h3>
-            <p class="leading-7 text-slate-300">Users may not use CmdRunner to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Users may not use CmdRunner to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Access systems without authorization</li>
                 <li>Conduct malicious attacks</li>
                 <li>Deploy malware</li>
@@ -267,13 +265,13 @@
                 <li>Circumvent security protections</li>
                 <li>Interfere with service availability</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner may suspend accounts involved in prohibited activities.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner may suspend accounts involved in prohibited activities.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.11 Intellectual Property</h3>
-            <p class="leading-7 text-slate-300">CmdRunner and all associated technology, infrastructure, AI systems, designs, workflows, interfaces, and documentation are owned by BotifyQA Solutions Private Limited or its licensors.</p>
-            <p class="leading-7 text-slate-300 mt-3">Users retain ownership of uploaded documents, workflows, prompts, and customer content.</p>
-            <p class="leading-7 text-slate-300 mt-3">Users grant CmdRunner a limited license to process customer content solely for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner and all associated technology, infrastructure, AI systems, designs, workflows, interfaces, and documentation are owned by BotifyQA Solutions Private Limited or its licensors.</p>
+            <p class="leading-7 text-slate-600 mt-3">Users retain ownership of uploaded documents, workflows, prompts, and customer content.</p>
+            <p class="leading-7 text-slate-600 mt-3">Users grant CmdRunner a limited license to process customer content solely for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Service delivery</li>
                 <li>Workflow execution</li>
                 <li>Performance optimization</li>
@@ -282,32 +280,32 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.12 Data Retention</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may store:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may store:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Screenshots</li>
                 <li>Execution logs</li>
                 <li>Session recordings</li>
                 <li>Uploaded test cases</li>
                 <li>Workflow metadata</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Retention settings may be controlled by customers.</p>
-            <p class="leading-7 text-slate-300 mt-3">Enterprise customers may request customized retention periods.</p>
+            <p class="leading-7 text-slate-600 mt-3">Retention settings may be controlled by customers.</p>
+            <p class="leading-7 text-slate-600 mt-3">Enterprise customers may request customized retention periods.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.13 Third-Party Providers</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may rely on third-party providers including:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may rely on third-party providers including:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>AI providers</li>
                 <li>Cloud infrastructure providers</li>
                 <li>Authentication systems</li>
                 <li>Browser automation infrastructure</li>
                 <li>Payment providers</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Service availability may depend on these providers. CmdRunner is not responsible for failures caused by third-party services.</p>
+            <p class="leading-7 text-slate-600 mt-3">Service availability may depend on these providers. CmdRunner is not responsible for failures caused by third-party services.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.14 Disclaimer of Warranties</h3>
             <div class="highlight-box">
-                <p class="font-bold text-slate-200 mb-3">THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE." TO THE MAXIMUM EXTENT PERMITTED BY LAW, CMDRUNNER DISCLAIMS ALL WARRANTIES INCLUDING:</p>
-                <ul class="text-slate-300 space-y-1">
+                <p class="font-bold text-slate-800 mb-3">THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE." TO THE MAXIMUM EXTENT PERMITTED BY LAW, CMDRUNNER DISCLAIMS ALL WARRANTIES INCLUDING:</p>
+                <ul class="text-slate-600 space-y-1">
                     <li>MERCHANTABILITY</li>
                     <li>FITNESS FOR A PARTICULAR PURPOSE</li>
                     <li>NON-INFRINGEMENT</li>
@@ -316,8 +314,8 @@
                     <li>AVAILABILITY</li>
                     <li>SECURITY</li>
                 </ul>
-                <p class="text-slate-300 mt-3">CmdRunner makes no warranty regarding:</p>
-                <ul class="text-slate-300 space-y-1">
+                <p class="text-slate-600 mt-3">CmdRunner makes no warranty regarding:</p>
+                <ul class="text-slate-600 space-y-1">
                     <li>Accuracy of AI outputs</li>
                     <li>Reliability of automation results</li>
                     <li>Continuous uptime</li>
@@ -327,9 +325,9 @@
 
             <h3 class="text-xl font-black mt-10 mb-3">1.15 Limitation of Liability</h3>
             <div class="highlight-box">
-                <p class="font-bold text-slate-200 mb-3">TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
-                <p class="text-slate-300 mb-2">CmdRunner shall not be liable for:</p>
-                <ul class="text-slate-300 space-y-1">
+                <p class="font-bold text-slate-800 mb-3">TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+                <p class="text-slate-600 mb-2">CmdRunner shall not be liable for:</p>
+                <ul class="text-slate-600 space-y-1">
                     <li>Indirect damages</li>
                     <li>Lost profits</li>
                     <li>Lost business opportunities</li>
@@ -339,14 +337,14 @@
                     <li>Browser incompatibilities</li>
                     <li>Business interruption</li>
                 </ul>
-                <p class="text-slate-300 mt-3">Total liability shall not exceed the amount paid by the customer during the previous twelve (12) months.</p>
+                <p class="text-slate-600 mt-3">Total liability shall not exceed the amount paid by the customer during the previous twelve (12) months.</p>
             </div>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.16 Governing Law</h3>
-            <p class="leading-7 text-slate-300">These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts located in Chennai, Tamil Nadu, India.</p>
+            <p class="leading-7 text-slate-600">These Terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts located in Chennai, Tamil Nadu, India.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">1.17 Contact</h3>
-            <p class="leading-7 text-slate-300">Support Email: <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a></p>
+            <p class="leading-7 text-slate-600">Support Email: <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a></p>
         </section>
 
         <!-- 2. AI TERMS -->
@@ -355,9 +353,9 @@
             <h2 class="text-3xl font-black mb-8">AI Terms</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">2.1 AI System Usage</h3>
-            <p class="leading-7 text-slate-300">CmdRunner uses AI systems, automation agents, and adaptive execution technologies to assist with workflow automation and software testing.</p>
-            <p class="leading-7 text-slate-300 mt-3">AI systems may:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner uses AI systems, automation agents, and adaptive execution technologies to assist with workflow automation and software testing.</p>
+            <p class="leading-7 text-slate-600 mt-3">AI systems may:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Interpret user instructions</li>
                 <li>Execute workflows</li>
                 <li>Analyze application behavior</li>
@@ -366,61 +364,61 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">2.2 AI Output Disclaimer</h3>
-            <p class="leading-7 text-slate-300">AI-generated outputs may:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">AI-generated outputs may:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Be inaccurate</li>
                 <li>Be incomplete</li>
                 <li>Produce unintended actions</li>
                 <li>Fail to execute correctly</li>
                 <li>Generate inconsistent behavior</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Users are solely responsible for validating all outputs and automation actions.</p>
+            <p class="leading-7 text-slate-600 mt-3">Users are solely responsible for validating all outputs and automation actions.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">2.3 Human Oversight Requirement</h3>
-            <p class="leading-7 text-slate-300">CmdRunner requires reasonable human oversight. Users must review:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner requires reasonable human oversight. Users must review:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Automation outputs</li>
                 <li>Generated reports</li>
                 <li>Browser interactions</li>
                 <li>AI execution behavior</li>
                 <li>Workflow actions</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner is not responsible for decisions made solely based on AI-generated outputs.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner is not responsible for decisions made solely based on AI-generated outputs.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">2.4 Adaptive Learning Behavior</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may improve workflow reliability using:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may improve workflow reliability using:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Retry analysis</li>
                 <li>Execution memory</li>
                 <li>Runtime adaptation</li>
                 <li>Workflow optimization</li>
                 <li>Error resolution strategies</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">This behavior is limited to improving operational performance within the Services.</p>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner does not train general-purpose foundation AI models using customer content unless explicitly disclosed.</p>
+            <p class="leading-7 text-slate-600 mt-3">This behavior is limited to improving operational performance within the Services.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner does not train general-purpose foundation AI models using customer content unless explicitly disclosed.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">2.5 Third-Party AI Providers</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may use third-party AI providers to process user requests. Users acknowledge that:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may use third-party AI providers to process user requests. Users acknowledge that:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Requests may pass through external AI systems</li>
                 <li>Availability may depend on third-party providers</li>
                 <li>External providers may process prompts temporarily</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner requires third-party providers to maintain commercially reasonable security protections.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner requires third-party providers to maintain commercially reasonable security protections.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">2.6 AI Availability</h3>
-            <p class="leading-7 text-slate-300">AI features may:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">AI features may:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Change over time</li>
                 <li>Produce variable results</li>
                 <li>Experience interruptions</li>
                 <li>Depend on external providers</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner does not guarantee uninterrupted AI functionality.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner does not guarantee uninterrupted AI functionality.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">2.7 Prohibited AI Usage</h3>
-            <p class="leading-7 text-slate-300">Users may not use CmdRunner AI systems for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Users may not use CmdRunner AI systems for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Malicious automation</li>
                 <li>Unauthorized access</li>
                 <li>Fraudulent activity</li>
@@ -436,26 +434,26 @@
             <h2 class="text-3xl font-black mb-8">Privacy Policy</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.1 Introduction</h3>
-            <p class="leading-7 text-slate-300">This Privacy Policy explains how CmdRunner collects, uses, stores, and protects information.</p>
+            <p class="leading-7 text-slate-600">This Privacy Policy explains how CmdRunner collects, uses, stores, and protects information.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.2 Information We Collect</h3>
-            <p class="font-bold text-slate-200 mt-4 mb-2">Account Information</p>
-            <ul class="text-slate-300 space-y-1">
+            <p class="font-bold text-slate-800 mt-4 mb-2">Account Information</p>
+            <ul class="text-slate-600 space-y-1">
                 <li>Name</li>
                 <li>Email address</li>
                 <li>Company name</li>
                 <li>Billing information</li>
             </ul>
-            <p class="font-bold text-slate-200 mt-4 mb-2">Usage Information</p>
-            <ul class="text-slate-300 space-y-1">
+            <p class="font-bold text-slate-800 mt-4 mb-2">Usage Information</p>
+            <ul class="text-slate-600 space-y-1">
                 <li>Automation activity</li>
                 <li>Execution metadata</li>
                 <li>Browser logs</li>
                 <li>Session information</li>
                 <li>Error logs</li>
             </ul>
-            <p class="font-bold text-slate-200 mt-4 mb-2">Uploaded Content</p>
-            <ul class="text-slate-300 space-y-1">
+            <p class="font-bold text-slate-800 mt-4 mb-2">Uploaded Content</p>
+            <ul class="text-slate-600 space-y-1">
                 <li>Test cases</li>
                 <li>Workflow documents</li>
                 <li>Uploaded files</li>
@@ -464,8 +462,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.3 How We Use Information</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may use information to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may use information to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Deliver Services</li>
                 <li>Execute workflows</li>
                 <li>Improve reliability</li>
@@ -474,48 +472,48 @@
                 <li>Provide customer support</li>
                 <li>Generate analytics</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner does not use customer content to train general-purpose foundation AI models unless explicitly authorized.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner does not use customer content to train general-purpose foundation AI models unless explicitly authorized.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.4 Data Retention</h3>
-            <p class="leading-7 text-slate-300">Customers may control retention settings where supported. Enterprise customers may request customized retention periods.</p>
+            <p class="leading-7 text-slate-600">Customers may control retention settings where supported. Enterprise customers may request customized retention periods.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.5 Security</h3>
-            <p class="leading-7 text-slate-300">CmdRunner implements commercially reasonable safeguards including:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner implements commercially reasonable safeguards including:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Encryption in transit</li>
                 <li>Encryption at rest</li>
                 <li>Access controls</li>
                 <li>Audit logging</li>
                 <li>Security monitoring</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">No system can guarantee absolute security.</p>
+            <p class="leading-7 text-slate-600 mt-3">No system can guarantee absolute security.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.6 User Rights</h3>
-            <p class="leading-7 text-slate-300">Users may request:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Users may request:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Data access</li>
                 <li>Data export</li>
                 <li>Data correction</li>
                 <li>Data deletion</li>
                 <li>Retention customization</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Requests may be submitted to <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a>.</p>
+            <p class="leading-7 text-slate-600 mt-3">Requests may be submitted to <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a>.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.7 International Transfers</h3>
-            <p class="leading-7 text-slate-300">Customer data may be processed using global cloud infrastructure providers. CmdRunner uses commercially reasonable safeguards for international transfers.</p>
+            <p class="leading-7 text-slate-600">Customer data may be processed using global cloud infrastructure providers. CmdRunner uses commercially reasonable safeguards for international transfers.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.8 Cookies and Analytics</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may use:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may use:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Cookies</li>
                 <li>Session identifiers</li>
                 <li>Usage analytics</li>
                 <li>Performance monitoring tools</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">These technologies help improve functionality and security.</p>
+            <p class="leading-7 text-slate-600 mt-3">These technologies help improve functionality and security.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">3.9 Children's Privacy</h3>
-            <p class="leading-7 text-slate-300">CmdRunner is not intended for individuals under 18 years of age.</p>
+            <p class="leading-7 text-slate-600">CmdRunner is not intended for individuals under 18 years of age.</p>
         </section>
 
         <!-- 4. DATA PROCESSING AGREEMENT -->
@@ -524,17 +522,17 @@
             <h2 class="text-3xl font-black mb-8">Data Processing Agreement (DPA)</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.1 Scope</h3>
-            <p class="leading-7 text-slate-300">This DPA applies when CmdRunner processes personal data on behalf of customers.</p>
+            <p class="leading-7 text-slate-600">This DPA applies when CmdRunner processes personal data on behalf of customers.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.2 Roles</h3>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Customer = Data Controller</li>
                 <li>CmdRunner = Data Processor</li>
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.3 Processing Purpose</h3>
-            <p class="leading-7 text-slate-300">CmdRunner processes data solely to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner processes data solely to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Provide Services</li>
                 <li>Execute workflows</li>
                 <li>Maintain platform security</li>
@@ -542,11 +540,11 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.4 Customer Instructions</h3>
-            <p class="leading-7 text-slate-300">CmdRunner processes data according to customer instructions provided through use of the Services.</p>
+            <p class="leading-7 text-slate-600">CmdRunner processes data according to customer instructions provided through use of the Services.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.5 Security Measures</h3>
-            <p class="leading-7 text-slate-300">CmdRunner implements safeguards including:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner implements safeguards including:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Encryption</li>
                 <li>Access controls</li>
                 <li>Audit logging</li>
@@ -555,30 +553,30 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.6 Subprocessors</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may engage subprocessors including:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may engage subprocessors including:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Cloud providers</li>
                 <li>AI providers</li>
                 <li>Infrastructure vendors</li>
                 <li>Authentication providers</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner maintains commercially reasonable vendor management practices.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner maintains commercially reasonable vendor management practices.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.7 Data Subject Rights</h3>
-            <p class="leading-7 text-slate-300">CmdRunner will assist customers in responding to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner will assist customers in responding to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Access requests</li>
                 <li>Deletion requests</li>
                 <li>Correction requests</li>
                 <li>Export requests</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">where commercially reasonable.</p>
+            <p class="leading-7 text-slate-600 mt-3">where commercially reasonable.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.8 Data Deletion</h3>
-            <p class="leading-7 text-slate-300">Upon request or termination, customer data may be deleted according to retention settings and legal obligations.</p>
+            <p class="leading-7 text-slate-600">Upon request or termination, customer data may be deleted according to retention settings and legal obligations.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">4.9 GDPR Support</h3>
-            <p class="leading-7 text-slate-300">CmdRunner supports reasonable GDPR-related obligations where applicable.</p>
+            <p class="leading-7 text-slate-600">CmdRunner supports reasonable GDPR-related obligations where applicable.</p>
         </section>
 
         <!-- 5. SECURITY POLICY -->
@@ -587,11 +585,11 @@
             <h2 class="text-3xl font-black mb-8">Security Policy</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">5.1 Security Commitment</h3>
-            <p class="leading-7 text-slate-300">CmdRunner is committed to maintaining commercially reasonable security safeguards.</p>
+            <p class="leading-7 text-slate-600">CmdRunner is committed to maintaining commercially reasonable security safeguards.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">5.2 Infrastructure Security</h3>
-            <p class="leading-7 text-slate-300">CmdRunner implements:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner implements:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Cloud security controls</li>
                 <li>Encryption at rest</li>
                 <li>Encryption in transit</li>
@@ -601,8 +599,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">5.3 Access Controls</h3>
-            <p class="leading-7 text-slate-300">CmdRunner supports:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner supports:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Role-based access control (RBAC)</li>
                 <li>Enterprise SSO/SAML</li>
                 <li>Audit logs</li>
@@ -610,8 +608,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">5.4 Monitoring</h3>
-            <p class="leading-7 text-slate-300">CmdRunner monitors:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner monitors:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Infrastructure health</li>
                 <li>Suspicious activity</li>
                 <li>Platform abuse</li>
@@ -619,8 +617,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">5.5 Incident Response</h3>
-            <p class="leading-7 text-slate-300">CmdRunner maintains incident response procedures for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner maintains incident response procedures for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Security incidents</li>
                 <li>Unauthorized access</li>
                 <li>Service disruptions</li>
@@ -628,8 +626,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">5.6 Customer Responsibilities</h3>
-            <p class="leading-7 text-slate-300">Customers are responsible for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Customers are responsible for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Securing credentials</li>
                 <li>Managing permissions</li>
                 <li>Reviewing automation outputs</li>
@@ -637,7 +635,7 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">5.7 Compliance Roadmap</h3>
-            <p class="leading-7 text-slate-300">CmdRunner intends to evolve security practices toward enterprise compliance standards including future SOC 2 readiness.</p>
+            <p class="leading-7 text-slate-600">CmdRunner intends to evolve security practices toward enterprise compliance standards including future SOC 2 readiness.</p>
         </section>
 
         <!-- 6. ACCEPTABLE USE POLICY -->
@@ -646,11 +644,11 @@
             <h2 class="text-3xl font-black mb-8">Acceptable Use Policy</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">6.1 Authorized Usage</h3>
-            <p class="leading-7 text-slate-300">Users may use CmdRunner only for lawful and authorized purposes. Users must ensure they possess proper authorization for all systems they automate or test.</p>
+            <p class="leading-7 text-slate-600">Users may use CmdRunner only for lawful and authorized purposes. Users must ensure they possess proper authorization for all systems they automate or test.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">6.2 Prohibited Activities</h3>
-            <p class="leading-7 text-slate-300">Users may not:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Users may not:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Access systems without authorization</li>
                 <li>Conduct cyberattacks</li>
                 <li>Deploy malware</li>
@@ -665,8 +663,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">6.3 Abuse Prevention</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may suspend accounts involved in:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may suspend accounts involved in:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Excessive abuse</li>
                 <li>Security risks</li>
                 <li>Fraudulent activity</li>
@@ -675,8 +673,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">6.4 High-Risk Usage Restrictions</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may not be used for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may not be used for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Military weapons systems</li>
                 <li>Nuclear systems</li>
                 <li>Life-support systems</li>
@@ -692,11 +690,11 @@
             <h2 class="text-3xl font-black mb-8">Enterprise Service Level Agreement (SLA)</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">7.1 Scope</h3>
-            <p class="leading-7 text-slate-300">This SLA applies to enterprise customers with active enterprise subscriptions.</p>
+            <p class="leading-7 text-slate-600">This SLA applies to enterprise customers with active enterprise subscriptions.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">7.2 Service Availability</h3>
-            <p class="leading-7 text-slate-300">CmdRunner targets 99% monthly uptime availability excluding:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner targets 99% monthly uptime availability excluding:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Scheduled maintenance</li>
                 <li>Force majeure events</li>
                 <li>Third-party provider outages</li>
@@ -704,8 +702,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">7.3 Support Channels</h3>
-            <p class="leading-7 text-slate-300">Enterprise support may include:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Enterprise support may include:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Priority email support</li>
                 <li>Dedicated enterprise assistance</li>
                 <li>Escalation management</li>
@@ -714,32 +712,32 @@
             <h3 class="text-xl font-black mt-10 mb-3">7.4 Incident Severity Levels</h3>
 
             <div class="highlight-box mt-4">
-                <p class="font-bold text-slate-200 mb-2">Critical Severity</p>
-                <p class="text-sm text-slate-400 mb-1">Examples: Major platform outage, Widespread workflow failure</p>
-                <p class="text-sm text-slate-300">Target Response Time: <span class="font-bold text-white">1 business hour</span></p>
+                <p class="font-bold text-slate-800 mb-2">Critical Severity</p>
+                <p class="text-sm text-slate-500 mb-1">Examples: Major platform outage, Widespread workflow failure</p>
+                <p class="text-sm text-slate-600">Target Response Time: <span class="font-bold text-slate-900">1 business hour</span></p>
             </div>
             <div class="highlight-box mt-3">
-                <p class="font-bold text-slate-200 mb-2">High Severity</p>
-                <p class="text-sm text-slate-400 mb-1">Examples: Significant feature degradation</p>
-                <p class="text-sm text-slate-300">Target Response Time: <span class="font-bold text-white">4 business hours</span></p>
+                <p class="font-bold text-slate-800 mb-2">High Severity</p>
+                <p class="text-sm text-slate-500 mb-1">Examples: Significant feature degradation</p>
+                <p class="text-sm text-slate-600">Target Response Time: <span class="font-bold text-slate-900">4 business hours</span></p>
             </div>
             <div class="highlight-box mt-3">
-                <p class="font-bold text-slate-200 mb-2">Medium Severity</p>
-                <p class="text-sm text-slate-400 mb-1">Examples: Partial functionality issues</p>
-                <p class="text-sm text-slate-300">Target Response Time: <span class="font-bold text-white">1 business day</span></p>
+                <p class="font-bold text-slate-800 mb-2">Medium Severity</p>
+                <p class="text-sm text-slate-500 mb-1">Examples: Partial functionality issues</p>
+                <p class="text-sm text-slate-600">Target Response Time: <span class="font-bold text-slate-900">1 business day</span></p>
             </div>
             <div class="highlight-box mt-3">
-                <p class="font-bold text-slate-200 mb-2">Low Severity</p>
-                <p class="text-sm text-slate-400 mb-1">Examples: General inquiries, Minor UI issues</p>
-                <p class="text-sm text-slate-300">Target Response Time: <span class="font-bold text-white">2 business days</span></p>
+                <p class="font-bold text-slate-800 mb-2">Low Severity</p>
+                <p class="text-sm text-slate-500 mb-1">Examples: General inquiries, Minor UI issues</p>
+                <p class="text-sm text-slate-600">Target Response Time: <span class="font-bold text-slate-900">2 business days</span></p>
             </div>
 
             <h3 class="text-xl font-black mt-10 mb-3">7.5 Maintenance</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may perform scheduled maintenance. Reasonable notice will be provided where practical.</p>
+            <p class="leading-7 text-slate-600">CmdRunner may perform scheduled maintenance. Reasonable notice will be provided where practical.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">7.6 SLA Limitations</h3>
-            <p class="leading-7 text-slate-300">The SLA does not apply to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">The SLA does not apply to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Beta features</li>
                 <li>Free trial users</li>
                 <li>Experimental functionality</li>
@@ -748,7 +746,7 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">7.7 Service Credits</h3>
-            <p class="leading-7 text-slate-300">Unless otherwise agreed in writing, SLA violations do not automatically entitle customers to refunds or credits.</p>
+            <p class="leading-7 text-slate-600">Unless otherwise agreed in writing, SLA violations do not automatically entitle customers to refunds or credits.</p>
         </section>
 
         <!-- 8. REFUND POLICY -->
@@ -757,13 +755,13 @@
             <h2 class="text-3xl font-black mb-8">Refund Policy</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">8.1 Free Trial</h3>
-            <p class="leading-7 text-slate-300">CmdRunner provides a free trial that includes up to fifty (50) test steps so users can evaluate the Services before purchasing a subscription.</p>
-            <p class="leading-7 text-slate-300 mt-3">By purchasing a subscription after the free trial period, users acknowledge that they have evaluated the platform and understand the nature of the Services.</p>
+            <p class="leading-7 text-slate-600">CmdRunner provides a free trial that includes up to fifty (50) test steps so users can evaluate the Services before purchasing a subscription.</p>
+            <p class="leading-7 text-slate-600 mt-3">By purchasing a subscription after the free trial period, users acknowledge that they have evaluated the platform and understand the nature of the Services.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">8.2 No Refund Policy</h3>
             <div class="highlight-box">
-                <p class="font-bold text-slate-200 mb-3">Except where required by applicable law, all payments made to CmdRunner are non-refundable. This includes:</p>
-                <ul class="text-slate-300 space-y-1">
+                <p class="font-bold text-slate-800 mb-3">Except where required by applicable law, all payments made to CmdRunner are non-refundable. This includes:</p>
+                <ul class="text-slate-600 space-y-1">
                     <li>Subscription fees</li>
                     <li>Usage-based charges</li>
                     <li>Test step consumption charges</li>
@@ -771,8 +769,8 @@
                     <li>Enterprise plan fees</li>
                     <li>Add-on purchases</li>
                 </ul>
-                <p class="text-slate-300 mt-3">Refunds will not be provided for:</p>
-                <ul class="text-slate-300 space-y-1">
+                <p class="text-slate-600 mt-3">Refunds will not be provided for:</p>
+                <ul class="text-slate-600 space-y-1">
                     <li>Unused test steps</li>
                     <li>Partial billing periods</li>
                     <li>Customer inactivity</li>
@@ -785,22 +783,22 @@
             </div>
 
             <h3 class="text-xl font-black mt-10 mb-3">8.3 Cancellation</h3>
-            <p class="leading-7 text-slate-300">Customers may cancel subscriptions at any time. Cancellation will prevent future billing but does not entitle customers to refunds for:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Customers may cancel subscriptions at any time. Cancellation will prevent future billing but does not entitle customers to refunds for:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Previously paid subscription periods</li>
                 <li>Consumed usage credits</li>
                 <li>Existing billing cycles</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Access to paid features may continue until the end of the active billing period.</p>
+            <p class="leading-7 text-slate-600 mt-3">Access to paid features may continue until the end of the active billing period.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">8.4 Enterprise Agreements</h3>
-            <p class="leading-7 text-slate-300">Enterprise customers operating under separately negotiated agreements may be subject to custom commercial terms. In the event of a conflict between this Refund Policy and a signed enterprise agreement, the enterprise agreement shall prevail.</p>
+            <p class="leading-7 text-slate-600">Enterprise customers operating under separately negotiated agreements may be subject to custom commercial terms. In the event of a conflict between this Refund Policy and a signed enterprise agreement, the enterprise agreement shall prevail.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">8.5 Billing Disputes</h3>
-            <p class="leading-7 text-slate-300">Customers must report billing disputes within seven (7) days of the applicable invoice date. CmdRunner reserves the right to deny disputes submitted after this period.</p>
+            <p class="leading-7 text-slate-600">Customers must report billing disputes within seven (7) days of the applicable invoice date. CmdRunner reserves the right to deny disputes submitted after this period.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">8.6 Discretionary Refunds</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may, at its sole discretion, provide goodwill refunds, credits, or adjustments in exceptional circumstances. Providing a discretionary refund in one case does not create an obligation to provide refunds in future cases.</p>
+            <p class="leading-7 text-slate-600">CmdRunner may, at its sole discretion, provide goodwill refunds, credits, or adjustments in exceptional circumstances. Providing a discretionary refund in one case does not create an obligation to provide refunds in future cases.</p>
         </section>
 
         <!-- 9. PRIVACY NOTICE -->
@@ -809,8 +807,8 @@
             <h2 class="text-3xl font-black mb-8">Privacy Notice</h2>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.1 Overview</h3>
-            <p class="leading-7 text-slate-300">This Privacy Notice summarizes how CmdRunner handles personal information in connection with the Services. This notice is intended to provide users with a clear and transparent overview of:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">This Privacy Notice summarizes how CmdRunner handles personal information in connection with the Services. This notice is intended to provide users with a clear and transparent overview of:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>What information CmdRunner collects</li>
                 <li>How information is used</li>
                 <li>How information is protected</li>
@@ -819,31 +817,31 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.2 Information CmdRunner May Collect</h3>
-            <p class="font-bold text-slate-200 mt-4 mb-2">Account Information</p>
-            <ul class="text-slate-300 space-y-1">
+            <p class="font-bold text-slate-800 mt-4 mb-2">Account Information</p>
+            <ul class="text-slate-600 space-y-1">
                 <li>Name</li>
                 <li>Email address</li>
                 <li>Company name</li>
                 <li>Authentication information</li>
             </ul>
-            <p class="font-bold text-slate-200 mt-4 mb-2">Service Usage Information</p>
-            <ul class="text-slate-300 space-y-1">
+            <p class="font-bold text-slate-800 mt-4 mb-2">Service Usage Information</p>
+            <ul class="text-slate-600 space-y-1">
                 <li>Workflow execution activity</li>
                 <li>Browser automation metadata</li>
                 <li>Error logs</li>
                 <li>Session activity</li>
                 <li>API usage information</li>
             </ul>
-            <p class="font-bold text-slate-200 mt-4 mb-2">Uploaded Content</p>
-            <ul class="text-slate-300 space-y-1">
+            <p class="font-bold text-slate-800 mt-4 mb-2">Uploaded Content</p>
+            <ul class="text-slate-600 space-y-1">
                 <li>Test cases</li>
                 <li>Documents</li>
                 <li>Uploaded workflow files</li>
                 <li>Screenshots</li>
                 <li>Execution recordings</li>
             </ul>
-            <p class="font-bold text-slate-200 mt-4 mb-2">Technical Information</p>
-            <ul class="text-slate-300 space-y-1">
+            <p class="font-bold text-slate-800 mt-4 mb-2">Technical Information</p>
+            <ul class="text-slate-600 space-y-1">
                 <li>IP address</li>
                 <li>Browser information</li>
                 <li>Device information</li>
@@ -852,8 +850,8 @@
             </ul>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.3 How CmdRunner Uses Information</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may use collected information to:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may use collected information to:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Deliver and improve Services</li>
                 <li>Execute workflows and automations</li>
                 <li>Monitor reliability and security</li>
@@ -862,24 +860,24 @@
                 <li>Maintain platform stability</li>
                 <li>Generate operational analytics</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner does not use customer content to train general-purpose foundation AI models unless explicitly disclosed and authorized.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner does not use customer content to train general-purpose foundation AI models unless explicitly disclosed and authorized.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.4 AI Processing Transparency</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may use third-party AI providers to process workflow instructions and automation requests. These providers may temporarily process user prompts and execution requests solely for providing AI functionality.</p>
-            <p class="leading-7 text-slate-300 mt-3">CmdRunner implements commercially reasonable safeguards when selecting third-party providers.</p>
+            <p class="leading-7 text-slate-600">CmdRunner may use third-party AI providers to process workflow instructions and automation requests. These providers may temporarily process user prompts and execution requests solely for providing AI functionality.</p>
+            <p class="leading-7 text-slate-600 mt-3">CmdRunner implements commercially reasonable safeguards when selecting third-party providers.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.5 Data Retention Controls</h3>
-            <p class="leading-7 text-slate-300">CmdRunner allows customers to manage retention settings where supported. Customers may request:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner allows customers to manage retention settings where supported. Customers may request:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Data deletion</li>
                 <li>Retention customization</li>
                 <li>Export of stored information</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Enterprise customers may receive additional retention controls under enterprise agreements.</p>
+            <p class="leading-7 text-slate-600 mt-3">Enterprise customers may receive additional retention controls under enterprise agreements.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.6 Security Measures</h3>
-            <p class="leading-7 text-slate-300">CmdRunner implements commercially reasonable security safeguards including:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner implements commercially reasonable security safeguards including:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Encryption in transit</li>
                 <li>Encryption at rest</li>
                 <li>Access controls</li>
@@ -887,73 +885,57 @@
                 <li>Security monitoring</li>
                 <li>Audit logging</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">No online platform can guarantee absolute security.</p>
+            <p class="leading-7 text-slate-600 mt-3">No online platform can guarantee absolute security.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.7 User Rights</h3>
-            <p class="leading-7 text-slate-300">Depending on applicable laws, users may request:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">Depending on applicable laws, users may request:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Access to personal information</li>
                 <li>Correction of inaccurate information</li>
                 <li>Deletion of personal information</li>
                 <li>Export of data</li>
                 <li>Restriction of certain processing activities</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Requests may be submitted to <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a>.</p>
+            <p class="leading-7 text-slate-600 mt-3">Requests may be submitted to <a href="mailto:support@cmdrunner.com">support@cmdrunner.com</a>.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.8 International Data Transfers</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may use global cloud infrastructure providers. As a result, information may be processed in multiple jurisdictions. CmdRunner implements commercially reasonable safeguards for international data transfers.</p>
+            <p class="leading-7 text-slate-600">CmdRunner may use global cloud infrastructure providers. As a result, information may be processed in multiple jurisdictions. CmdRunner implements commercially reasonable safeguards for international data transfers.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.9 Children's Privacy</h3>
-            <p class="leading-7 text-slate-300">CmdRunner is not intended for individuals under eighteen (18) years of age. CmdRunner does not knowingly collect personal information from children.</p>
+            <p class="leading-7 text-slate-600">CmdRunner is not intended for individuals under eighteen (18) years of age. CmdRunner does not knowingly collect personal information from children.</p>
 
             <h3 class="text-xl font-black mt-10 mb-3">9.10 Updates to This Privacy Notice</h3>
-            <p class="leading-7 text-slate-300">CmdRunner may update this Privacy Notice periodically.</p>
-            <p class="leading-7 text-slate-300 mt-3">Material changes may be communicated through:</p>
-            <ul class="text-slate-300 space-y-1 mt-2">
+            <p class="leading-7 text-slate-600">CmdRunner may update this Privacy Notice periodically.</p>
+            <p class="leading-7 text-slate-600 mt-3">Material changes may be communicated through:</p>
+            <ul class="text-slate-600 space-y-1 mt-2">
                 <li>Website updates</li>
                 <li>Platform notifications</li>
                 <li>Email communications</li>
             </ul>
-            <p class="leading-7 text-slate-300 mt-3">Continued use of the Services after updates become effective constitutes acceptance of the revised notice.</p>
+            <p class="leading-7 text-slate-600 mt-3">Continued use of the Services after updates become effective constitutes acceptance of the revised notice.</p>
         </section>
 
-        <!-- Final Note -->
-        <div class="final-note mt-16">
-            <h2 class="text-xl font-black mb-4" style="color: var(--violet);">Final Note</h2>
-            <p class="leading-7 text-slate-300 mb-3">This legal framework is designed specifically for CmdRunner's:</p>
-            <ul class="text-slate-300 space-y-1">
-                <li>AI-powered browser automation</li>
-                <li>Agentic execution architecture</li>
-                <li>Adaptive retry-based learning behavior</li>
-                <li>Cloud-native SaaS infrastructure</li>
-                <li>Enterprise software testing workflows</li>
-                <li>Usage-based billing model</li>
-                <li>Future enterprise compliance roadmap</li>
-            </ul>
-            <p class="leading-7 text-slate-400 mt-4 text-sm">This framework should still be reviewed by qualified legal counsel before production deployment or enterprise contracting.</p>
-        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 bg-transparent px-5 py-12 text-slate-400">
+    <footer class="border-t px-5 py-12" style="border-color: var(--line); color: var(--dim);">
         <div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div class="flex items-center gap-3">
-                <span class="brand-mark flex h-10 w-10 items-center justify-center rounded-xl text-sm font-black text-slate-950">CR</span>
+                <img src="{{ url_for('static', filename='images/logo-with-name.jpeg') }}" alt="CmdRunner" class="h-8 w-auto">
                 <div>
-                    <div class="font-black text-white">CmdRunner</div>
-                    <div class="text-sm">Document-led AI browser automation.</div>
+                    <div class="text-sm" style="color: var(--dim);">Document-led AI browser automation.</div>
                 </div>
             </div>
-            <div class="flex flex-col md:flex-row gap-6 text-sm font-semibold">
+            <div class="flex flex-col md:flex-row gap-6 text-sm font-medium">
                 <div class="flex gap-6">
-                    <a href="/#workflow" class="hover:text-white">Workflow</a>
-                    <a href="/#features" class="hover:text-white">Features</a>
-                    <a href="/#faq" class="hover:text-white">FAQ</a>
+                    <a href="/#platform" class="hover:text-[#2563EB] transition">Workflow</a>
+                    <a href="/why" class="hover:text-[#2563EB] transition">Features</a>
+                    <a href="/resource" class="hover:text-[#2563EB] transition">Resources</a>
                 </div>
-                <div class="flex gap-6 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-6">
-                    <a href="/privacy" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="/terms" class="hover:text-white transition">Terms of Service</a>
-                    <a href="/refund" class="hover:text-white transition">Refund Policy</a>
+                <div class="flex gap-6 border-t md:border-t-0 md:border-l pt-6 md:pt-0 md:pl-6" style="border-color: var(--line);">
+                    <a href="/privacy" class="hover:text-[#2563EB] transition">Privacy Policy</a>
+                    <a href="/terms" class="hover:text-[#2563EB] transition">Terms of Service</a>
+                    <a href="/refund" class="hover:text-[#2563EB] transition">Refund Policy</a>
                 </div>
             </div>
             <p class="text-sm">&copy; 2026 CmdRunner. All rights reserved.</p>

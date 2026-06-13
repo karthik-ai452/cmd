@@ -77,75 +77,205 @@
 
     <script src="{{ url_for('static', filename='assets/js/main.js') }}" defer></script>
 </head>
-<body>
+<body style="background: #ffffff;">
+
+    <!-- Announcement Banner -->
+    <div id="cta-banner" class="sticky top-0 z-[60] relative" style="background: linear-gradient(135deg, #2563EB, #1D4ED8); cursor: pointer;" onclick="window.open('https://app.cmdrunner.com/register','_blank')">
+        <div class="mx-auto max-w-7xl flex items-center justify-center gap-4 px-5 py-3 text-center">
+            <div>
+                <span class="text-sm md:text-base font-semibold text-white">Cut QA Automation Costs by Up to 80%</span>
+                <span class="hidden sm:inline text-sm text-blue-100 ml-2">— Execute tests directly from documents — without writing or maintaining scripts.</span>
+            </div>
+            <svg class="w-4 h-4 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+    </div>
+
     <div class="page-aurora min-h-screen">
-        <nav class="nav-shell fixed top-0 z-50 w-full">
-            <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-                    <a href="#" class="flex items-center gap-3" aria-label="CmdRunner home">
-                    <img src="{{ url_for('static', filename='favicon/favicon-32x32.png') }}" alt="CmdRunner logo" class="h-10 w-10 rounded-xl">
-                    <span class="text-lg font-black tracking-tight">CmdRunner</span>
+        <nav class="nav-shell sticky top-[44px] z-50 w-full">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
+                <a href="/" class="flex items-center gap-3" aria-label="CmdRunner home">
+                    <img src="{{ url_for('static', filename='images/logo-with-name.jpeg') }}" alt="CmdRunner" class="h-[56px] w-auto">
                 </a>
-                <div class="hidden items-center gap-7 text-sm font-semibold text-slate-300 md:flex">
-                    <a href="/why" class="hover:text-white transition">Why CmdRunner</a>
-                    <a href="/resource" class="hover:text-white transition">Resource</a>
-                    <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-primary rounded-full px-5 py-2.5 font-black transition inline-block">Request beta</a>
+                <div class="hidden items-center gap-7 text-sm font-medium md:flex" style="color: var(--dim);">
+                    <a href="/why" class="hover:text-[#2563EB] transition">Why CmdRunner</a>
+                    <a href="/resource" class="hover:text-[#2563EB] transition">Resource</a>
+                    <a href="https://calendar.app.google/s2G5stLiU99N6u78A" target="_blank" class="btn-primary rounded-lg px-5 py-2.5 transition inline-block">Book a Demo</a>
                 </div>
             </div>
         </nav>
 
         <main>
-            <section class="relative overflow-hidden px-5 pb-24 pt-32 md:pb-32 md:pt-40">
+            <!-- HERO SECTION -->
+            <section class="relative overflow-hidden px-5 pb-16 pt-16 md:pb-24 md:pt-20">
                 <div class="mx-auto max-w-7xl">
-                    <div class="top-banner reveal mx-auto mb-10 flex max-w-3xl items-center justify-center gap-3 rounded-full px-4 py-2 text-center text-sm font-semibold text-slate-200">
-                        <span class="h-2 w-2 rounded-full bg-[var(--lime)]"></span>
-                        Agentic AI-powered test automation — now in beta
-                    </div>
+                    <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] items-center">
+                        <!-- LEFT: Hero Text -->
+                        <div>
+                            <div class="top-banner reveal mb-8 inline-flex items-center gap-2.5 rounded-full px-4 py-2 text-xs font-semibold tracking-wide uppercase">
+                                <span class="h-1.5 w-1.5 rounded-full" style="background: var(--blue); animation: pulse-dot 2s ease-in-out infinite;"></span>
+                                AI-Powered Test Automation
+                            </div>
 
-                    <div class="mx-auto max-w-6xl text-center">
-                        <h1 class="headline reveal font-black tracking-tight">
-                            Testing at the speed of <span class="color-word">thought.</span>
-                        </h1>
-                        <p class="reveal mx-auto mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl" style="animation-delay: 0.08s;">
-                            Reduce testing costs by 70%. Ship releases 10× faster. Eliminate script maintenance entirely. CmdRunner's Agentic AI executes your test cases from documents reducing time spent on testing so more engineering time can be allocated to product development.
-                        </p>
-                        <div class="reveal mt-9 flex flex-col justify-center gap-3 sm:flex-row" style="animation-delay: 0.14s;">
-                            <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-primary rounded-full px-8 py-4 text-base font-black transition inline-block">Request beta</a>
-                            
+                            <h1 class="reveal text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.08] mb-6" style="color: var(--text); letter-spacing: -0.02em;">
+                                Testing at the<br>speed of <span class="color-word">thought.</span>
+                            </h1>
+
+                            <p class="reveal text-lg md:text-xl leading-8 mb-10 max-w-[560px]" style="color: var(--muted); animation-delay: 0.08s;">
+                                AI-native test automation built for modern teams.
+                                Execute complex workflows, adapt to UI changes automatically,
+                                and ship faster without maintaining brittle scripts.
+                            </p>
+
+                            <div class="reveal flex flex-col sm:flex-row gap-3 mb-10" style="animation-delay: 0.14s;">
+                                <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-primary rounded-lg px-7 py-3.5 text-base font-semibold transition inline-block text-center">Start Free Trial</a>
+                                <a href="#demo" class="btn-secondary rounded-lg px-7 py-3.5 text-base font-medium transition inline-block text-center">Watch Demo</a>
+                            </div>
+
+                            <div class="reveal flex gap-6 flex-wrap text-sm" style="color: var(--dim); animation-delay: 0.20s;">
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    No Credit Card
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    14-Day Free Trial
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    Quick Setup
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT: Dashboard Mockup -->
+                        <div class="dash-glow w-full">
+                            <div class="dash-frame relative rounded-2xl" style="z-index: 2;">
+                                <!-- Dashboard Top Bar -->
+                                <div class="dash-top flex items-center justify-between px-4 py-2.5">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="w-2.5 h-2.5 rounded-full" style="background: #ff5f56;"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full" style="background: #ffbd2e;"></span>
+                                        <span class="w-2.5 h-2.5 rounded-full" style="background: #27c93f;"></span>
+                                    </div>
+                                    <span class="text-[11px] font-medium" style="color: var(--dim);">CmdRunner — Test Dashboard</span>
+                                    <div class="w-12"></div>
+                                </div>
+
+                                <div class="flex">
+                                    <!-- Sidebar -->
+                                    <div class="dash-sidebar w-40 p-3 hidden md:block flex-shrink-0">
+                                        <div class="dash-sidebar-item active mb-0.5 text-xs font-semibold">📊 Dashboard</div>
+                                        <div class="dash-sidebar-item mb-0.5 text-xs">🧪 Test Runs</div>
+                                        <div class="dash-sidebar-item mb-0.5 text-xs">📄 Documents</div>
+                                        <div class="dash-sidebar-item mb-0.5 text-xs">📈 Reports</div>
+                                        <div class="dash-sidebar-item text-xs">⚙️ Settings</div>
+                                    </div>
+
+                                    <!-- Main Dashboard Content -->
+                                    <div class="flex-1 p-4 md:p-5">
+                                        <!-- Metric Cards Row -->
+                                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+                                            <div class="dash-metric-card">
+                                                <div class="dash-metric-value">1,248</div>
+                                                <div class="dash-metric-label">Total Tests</div>
+                                            </div>
+                                            <div class="dash-metric-card">
+                                                <div class="dash-metric-value" style="color: #16a34a;">1,035</div>
+                                                <div class="dash-metric-label">Passed</div>
+                                            </div>
+                                            <div class="dash-metric-card">
+                                                <div class="dash-metric-value" style="color: #dc2626;">213</div>
+                                                <div class="dash-metric-label">Failed</div>
+                                            </div>
+                                            <div class="dash-metric-card">
+                                                <div class="dash-metric-value">2.4s</div>
+                                                <div class="dash-metric-label">Avg. Duration</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Chart Area -->
+                                        <div class="dash-section mb-4">
+                                            <div class="flex justify-between items-center mb-4">
+                                                <span class="text-xs font-semibold" style="color: var(--text);">Test Execution Trend</span>
+                                                <span class="text-xs" style="color: var(--dim);">Last 7 days</span>
+                                            </div>
+                                            <div class="flex items-end gap-2 h-24">
+                                                <div class="flex-1 dash-chart-bar" style="height: 55%;"></div>
+                                                <div class="flex-1 dash-chart-bar" style="height: 72%;"></div>
+                                                <div class="flex-1 dash-chart-bar" style="height: 48%;"></div>
+                                                <div class="flex-1 dash-chart-bar" style="height: 88%;"></div>
+                                                <div class="flex-1 dash-chart-bar" style="height: 65%;"></div>
+                                                <div class="flex-1 dash-chart-bar" style="height: 92%;"></div>
+                                                <div class="flex-1 dash-chart-bar" style="height: 78%;"></div>
+                                            </div>
+                                            <div class="flex justify-between mt-2">
+                                                <span class="text-[10px] flex-1 text-center" style="color: var(--dim);">Mon</span>
+                                                <span class="text-[10px] flex-1 text-center" style="color: var(--dim);">Tue</span>
+                                                <span class="text-[10px] flex-1 text-center" style="color: var(--dim);">Wed</span>
+                                                <span class="text-[10px] flex-1 text-center" style="color: var(--dim);">Thu</span>
+                                                <span class="text-[10px] flex-1 text-center" style="color: var(--dim);">Fri</span>
+                                                <span class="text-[10px] flex-1 text-center" style="color: var(--dim);">Sat</span>
+          </div>
+                                            <div class="dash-test-row flex items-center justify-between">
+                                                <span class="text-xs truncate flex-1" style="color: var(--text);">Login Flow — Valid User</span>
+                                                <span class="dash-status-passed ml-2">Passed</span>
+                                            </div>
+                                            <div class="dash-test-row flex items-center justify-between">
+                                                <span class="text-xs truncate flex-1" style="color: var(--text);">Checkout — Credit Card</span>
+                                                <span class="dash-status-passed ml-2">Passed</span>
+                                            </div>
+                                            <div class="dash-test-row flex items-center justify-between">
+                                                <span class="text-xs truncate flex-1" style="color: var(--text);">Search — Filter Results</span>
+                                                <span class="dash-status-failed ml-2">Failed</span>
+                                            </div>
+                                            <div class="dash-test-row flex items-center justify-between" style="border-bottom: none;">
+                                                <span class="text-xs truncate flex-1" style="color: var(--text);">Profile Update — Avatar</span>
+                                                <span class="dash-status-passed ml-2">Passed</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="logo-rail mt-12">
-                        <div class="logo-track flex w-max gap-4">
-                            <div class="flex gap-4">
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Salesforce QA</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">ERP testing</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Regression suites</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Checkout flows</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Excel test cases</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Admin portals</span>
-                            </div>
-                            <div class="flex gap-4" aria-hidden="true">
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Salesforce QA</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">ERP testing</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Regression suites</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Checkout flows</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Excel test cases</span>
-                                <span class="logo-pill rounded-full px-6 py-3 text-sm font-black">Admin portals</span>
+                    <!-- Logo Rail -->
+                    <div class="mt-20 pt-12 border-t" style="border-color: var(--line);">
+                        <p class="text-center text-sm font-medium mb-6" style="color: var(--dim);">Built for testing teams across industries</p>
+                        <div class="logo-rail">
+                            <div class="logo-track flex w-max gap-3">
+                                <div class="flex gap-3">
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Salesforce QA</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">ERP testing</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Regression suites</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Checkout flows</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Excel test cases</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Admin portals</span>
+                                </div>
+                                <div class="flex gap-3" aria-hidden="true">
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Salesforce QA</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">ERP testing</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Regression suites</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Checkout flows</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Excel test cases</span>
+                                    <span class="logo-pill rounded-lg px-5 py-2.5 text-sm">Admin portals</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- DEMO VIDEO -->
             <section id="demo" class="px-5 py-24">
                 <div class="mx-auto max-w-6xl">
                     <div class="mb-10 max-w-3xl">
-                        <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--cyan)]">Product demo</p>
-                        <h2 class="text-4xl font-black md:text-6xl">See the AI read a test case and execute it in a real browser.</h2>
-                        <p class="mt-5 text-lg leading-8 text-slate-400">Watch CmdRunner parse a document, understand each step's intent, navigate the application, perform actions, and validate results — all without a single line of code.</p>
+                        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.15em]" style="color: var(--blue);">Product demo</p>
+                        <h2 class="text-3xl font-bold md:text-4xl" style="color: var(--text);">See the AI read a test case and execute it in a real browser.</h2>
+                        <p class="mt-5 text-lg leading-8" style="color: var(--muted);">Watch CmdRunner parse a document, understand each step's intent, navigate the application, perform actions, and validate results — all without a single line of code.</p>
                     </div>
-                    <div class="video-frame overflow-hidden rounded-[1.75rem] p-3 md:p-4">
-                        <div class="video-shell overflow-hidden rounded-[1.25rem]">
+                    <div class="video-frame overflow-hidden rounded-2xl p-3 md:p-4">
+                        <div class="video-shell overflow-hidden rounded-xl">
                             <iframe
                                 id="demoVideo"
                                 title="CmdRunner demo video"
@@ -160,116 +290,201 @@
                 </div>
             </section>
 
+            <!-- HOW IT WORKS — 3-Step Visual Flow -->
+            <section class="px-5 py-24">
+                <div class="mx-auto max-w-6xl">
+                    <div class="mb-14 text-center">
+                        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.15em]" style="color: var(--blue);">How it works</p>
+                        <h2 class="text-3xl font-bold md:text-5xl" style="color: var(--text); letter-spacing: -0.02em;">Four steps. Zero code.</h2>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div class="mb-8 grid gap-6 lg:grid-cols-2 lg:items-center">
+                        <div>
+                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold">1</span>
+                            <h3 class="text-2xl font-bold md:text-3xl" style="color: var(--text);">Upload your test document</h3>
+                            <p class="mt-4 text-lg leading-8" style="color: var(--muted);">Take the test case document your QA team already maintains — a Word doc, an Excel sheet, or a PDF — and upload it to CmdRunner. No special formatting. No test scripting language. Just the natural-language steps your team already writes.</p>
+                        </div>
+                        <div class="feature-box rounded-xl overflow-hidden">
+                            <video class="w-full block" muted loop autoplay playsinline preload="auto">
+                                <source src="{{ url_for('static', filename='videos/testcases.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex justify-center my-4">
+                        <svg class="w-6 h-6" style="color: var(--dim);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="mb-8 grid gap-6 lg:grid-cols-2 lg:items-center">
+                        <div class="feature-box rounded-xl overflow-hidden">
+                            <video class="w-full block" muted loop autoplay playsinline preload="auto" id="vid-step2">
+                                <source src="{{ url_for('static', filename='videos/ai_execution.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div>
+                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold">2</span>
+                            <h3 class="text-2xl font-bold md:text-3xl" style="color: var(--text);">Agentic AI executes every step</h3>
+                            <p class="mt-4 text-lg leading-8" style="color: var(--muted);">Instead of only following predefined selectors or scripts, CmdRunner's AI understands the intent behind the test steps and adapts dynamically while interacting with the application. It navigates, performs actions, and validates results — interacting with your software like a real human user.</p>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex justify-center my-4">
+                        <svg class="w-6 h-6" style="color: var(--dim);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="grid gap-6 lg:grid-cols-2 lg:items-center">
+                        <div>
+                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold">3</span>
+                            <h3 class="text-2xl font-bold md:text-3xl" style="color: var(--text);">Human in the loop</h3>
+                            <p class="mt-4 text-lg leading-8" style="color: var(--muted);">CmdRunner pauses at key checkpoints — assertions, sensitive steps, or ambiguous outcomes — and routes them to a human reviewer for approval. Your team stays in control of critical decisions, with full context from screenshots and execution logs at their fingertips. Approve, request changes, or add notes — all before a test is marked complete.</p>
+                        </div>
+                        <div class="feature-box rounded-xl overflow-hidden">
+                            <video class="w-full block" muted loop autoplay playsinline preload="auto">
+                                <source src="{{ url_for('static', filename='videos/human_in_the_loop.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="flex justify-center my-4">
+                        <svg class="w-6 h-6" style="color: var(--dim);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="grid gap-6 lg:grid-cols-2 lg:items-center">
+                        <div class="feature-box rounded-xl overflow-hidden">
+                            <video class="w-full block" muted loop autoplay playsinline preload="auto" id="vid-step4">
+                                <source src="{{ url_for('static', filename='videos/report.mp4') }}" type="video/mp4">
+                            </video>
+                        </div>
+                        <div>
+                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold">4</span>
+                            <h3 class="text-2xl font-bold md:text-3xl" style="color: var(--text);">Get validated results with full evidence</h3>
+                            <p class="mt-4 text-lg leading-8" style="color: var(--muted);">CmdRunner validates the results against your expected outcomes and generates execution reports automatically — step-by-step screenshots, action logs, and a clear pass/fail verdict tied back to the original test case. Your team reviews the results, not the execution.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HOW IT WORKS -->
             <section id="platform" class="section-muted px-5 py-24">
                 <div class="mx-auto max-w-7xl">
-                    <div class="mb-12 max-w-3xl">
-                        <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--cyan)]">How it works</p>
-                        <h2 class="text-4xl font-black md:text-6xl">From document to done — in five steps.</h2>
-                        <p class="mt-5 text-lg leading-8 text-slate-400">CmdRunner's Agentic AI understands the intent behind your test steps and adapts dynamically while interacting with your application.</p>
+                    <div class="mb-14 max-w-2xl">
+                        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.15em]" style="color: var(--blue);">How it works</p>
+                        <h2 class="text-3xl font-bold md:text-4xl" style="color: var(--text); letter-spacing: -0.02em;">From document to done — in five steps.</h2>
+                        <p class="mt-5 text-lg leading-8" style="color: var(--muted);">CmdRunner's Agentic AI understands the intent behind your test steps and adapts dynamically while interacting with your application.</p>
                     </div>
-                    <div class="grid gap-5 md:grid-cols-5">
-                        <article class="workflow-card rounded-2xl p-5">
-                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">01</span>
-                            <h3 class="font-black">Upload</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Upload your test cases from Excel, Word, or PDF — the formats your team already uses.</p>
+                    <div class="grid gap-4 md:grid-cols-5">
+                        <article class="workflow-card rounded-xl p-6">
+                            <span class="number-badge mb-4 flex h-9 w-9 items-center justify-center rounded-lg text-sm font-semibold">01</span>
+                            <h3 class="font-semibold text-sm" style="color: var(--text);">Upload</h3>
+                            <p class="mt-2 text-sm leading-6" style="color: var(--muted);">Upload your test cases from Excel, Word, or PDF — the formats your team already uses.</p>
                         </article>
-                        <article class="workflow-card rounded-2xl p-5">
-                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">02</span>
-                            <h3 class="font-black">Understand</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">The AI parses each step, understands the intent, and maps it to real browser actions.</p>
+                        <article class="workflow-card rounded-xl p-6">
+                            <span class="number-badge mb-4 flex h-9 w-9 items-center justify-center rounded-lg text-sm font-semibold">02</span>
+                            <h3 class="font-semibold text-sm" style="color: var(--text);">Understand</h3>
+                            <p class="mt-2 text-sm leading-6" style="color: var(--muted);">The AI parses each step, understands the intent, and maps it to real browser actions.</p>
                         </article>
-                        <article class="workflow-card rounded-2xl p-5">
-                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">03</span>
-                            <h3 class="font-black">Execute</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">The agent interacts with your app like a human — clicking, typing, and navigating flows.</p>
+                        <article class="workflow-card rounded-xl p-6">
+                            <span class="number-badge mb-4 flex h-9 w-9 items-center justify-center rounded-lg text-sm font-semibold">03</span>
+                            <h3 class="font-semibold text-sm" style="color: var(--text);">Execute</h3>
+                            <p class="mt-2 text-sm leading-6" style="color: var(--muted);">The agent interacts with your app like a human — clicking, typing, and navigating flows.</p>
                         </article>
-                        <article class="workflow-card rounded-2xl p-5">
-                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">04</span>
-                            <h3 class="font-black">Validate</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Results are checked against your expected outcomes with visual and content assertions.</p>
+                        <article class="workflow-card rounded-xl p-6">
+                            <span class="number-badge mb-4 flex h-9 w-9 items-center justify-center rounded-lg text-sm font-semibold">04</span>
+                            <h3 class="font-semibold text-sm" style="color: var(--text);">Validate</h3>
+                            <p class="mt-2 text-sm leading-6" style="color: var(--muted);">Results are checked against your expected outcomes with visual and content assertions.</p>
                         </article>
-                        <article class="workflow-card rounded-2xl p-5">
-                            <span class="number-badge mb-5 flex h-10 w-10 items-center justify-center rounded-full text-sm font-black">05</span>
-                            <h3 class="font-black">Report</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-400">Get screenshots, step-by-step logs, and pass/fail evidence — automatically.</p>
+                        <article class="workflow-card rounded-xl p-6">
+                            <span class="number-badge mb-4 flex h-9 w-9 items-center justify-center rounded-lg text-sm font-semibold">05</span>
+                            <h3 class="font-semibold text-sm" style="color: var(--text);">Report</h3>
+                            <p class="mt-2 text-sm leading-6" style="color: var(--muted);">Get screenshots, step-by-step logs, and pass/fail evidence — automatically.</p>
                         </article>
                     </div>
                 </div>
             </section>
 
+            <!-- AI-NATIVE QA -->
             <section id="why" class="px-5 py-24">
                 <div class="mx-auto max-w-7xl">
-                    <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+                    <div class="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
                         <div>
-                            <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--lime)]">AI-native QA</p>
-                            <h2 class="text-4xl font-black md:text-6xl">No scripting. No selectors. No maintenance.</h2>
-                            <p class="mt-6 text-lg leading-8 text-slate-400">Instead of relying on brittle selectors or complex automation frameworks, CmdRunner's Agentic AI understands the intent behind each test step and adapts dynamically when your UI changes.</p>
+                            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.15em]" style="color: var(--blue);">AI-native QA</p>
+                            <h2 class="text-3xl font-bold md:text-4xl" style="color: var(--text); letter-spacing: -0.02em;">No scripting. No selectors. No maintenance.</h2>
+                            <p class="mt-6 text-lg leading-8" style="color: var(--muted);">Instead of relying on brittle selectors or complex automation frameworks, CmdRunner's Agentic AI understands the intent behind each test step and adapts dynamically when your UI changes.</p>
                         </div>
-                        <div class="grid gap-5 md:grid-cols-2">
-                            <article class="feature-box rounded-2xl p-6">
-                                <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">NL</div>
-                                <h3 class="text-xl font-black">Document-driven testing</h3>
-                                <p class="mt-4 leading-7 text-slate-400">Upload test cases from Excel, Word, or PDF. The AI reads and executes them — no code to write, no framework to learn.</p>
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <article class="feature-box rounded-xl p-6">
+                                <div class="feature-icon mb-4 flex h-11 w-11 items-center justify-center rounded-lg text-sm font-bold">NL</div>
+                                <h3 class="text-lg font-semibold" style="color: var(--text);">Document-driven testing</h3>
+                                <p class="mt-3 text-sm leading-7" style="color: var(--muted);">Upload test cases from Excel, Word, or PDF. The AI reads and executes them — no code to write, no framework to learn.</p>
                             </article>
-                            <article class="feature-box rounded-2xl p-6">
-                                <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">VR</div>
-                                <h3 class="text-xl font-black">Human-like interaction</h3>
-                                <p class="mt-4 leading-7 text-slate-400">The agent reads labels, recognizes buttons, fills forms, and navigates multi-step workflows — just like a real QA engineer would.</p>
+                            <article class="feature-box rounded-xl p-6">
+                                <div class="feature-icon mb-4 flex h-11 w-11 items-center justify-center rounded-lg text-sm font-bold">VR</div>
+                                <h3 class="text-lg font-semibold" style="color: var(--text);">Human-like interaction</h3>
+                                <p class="mt-3 text-sm leading-7" style="color: var(--muted);">The agent reads labels, recognizes buttons, fills forms, and navigates multi-step workflows — just like a real QA engineer would.</p>
                             </article>
-                            <article class="feature-box rounded-2xl p-6">
-                                <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">SH</div>
-                                <h3 class="text-xl font-black">Self-healing execution</h3>
-                                <p class="mt-4 leading-7 text-slate-400">When your UI changes, the AI adapts automatically. It reasons about intent, not selectors — so your tests keep running without fixes.</p>
+                            <article class="feature-box rounded-xl p-6">
+                                <div class="feature-icon mb-4 flex h-11 w-11 items-center justify-center rounded-lg text-sm font-bold">SH</div>
+                                <h3 class="text-lg font-semibold" style="color: var(--text);">Self-healing execution</h3>
+                                <p class="mt-3 text-sm leading-7" style="color: var(--muted);">When your UI changes, the AI adapts automatically. It reasons about intent, not selectors — so your tests keep running without fixes.</p>
                             </article>
-                            <article class="feature-box rounded-2xl p-6">
-                                <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl font-black">AS</div>
-                                <h3 class="text-xl font-black">Works across enterprise apps</h3>
-                                <p class="mt-4 leading-7 text-slate-400">From Salesforce to ERP systems to internal business tools — test the complex workflows that traditional automation can't handle.</p>
+                            <article class="feature-box rounded-xl p-6">
+                                <div class="feature-icon mb-4 flex h-11 w-11 items-center justify-center rounded-lg text-sm font-bold">AS</div>
+                                <h3 class="text-lg font-semibold" style="color: var(--text);">Works across enterprise apps</h3>
+                                <p class="mt-3 text-sm leading-7" style="color: var(--muted);">From Salesforce to ERP systems to internal business tools — test the complex workflows that traditional automation can't handle.</p>
                             </article>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- IMPACT -->
             <section id="proof" class="section-muted px-5 py-24">
                 <div class="mx-auto max-w-7xl">
-                    <div class="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+                    <div class="mb-14 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
                         <div>
-                            <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--coral)]">Impact</p>
-                            <h2 class="max-w-3xl text-4xl font-black md:text-6xl">Move faster. Reduce manual work. Focus on quality.</h2>
-                            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-400">CmdRunner enables teams to ship with confidence — without spending weeks writing and maintaining automation scripts.</p>
+                            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.15em]" style="color: var(--blue);">Impact</p>
+                            <h2 class="max-w-3xl text-3xl font-bold md:text-4xl" style="color: var(--text); letter-spacing: -0.02em;">Move faster. Reduce manual work. Focus on quality.</h2>
+                            <p class="mt-5 max-w-2xl text-lg leading-8" style="color: var(--muted);">CmdRunner enables teams to ship with confidence — without spending weeks writing and maintaining automation scripts.</p>
                         </div>
-                        <a href="https://app.cmdrunner.com/register" target="_blank" class="btn-secondary w-fit rounded-full px-6 py-3 font-black transition inline-block">Request beta</a>
+                        <a href="https://calendar.app.google/s2G5stLiU99N6u78A" target="_blank" class="btn-secondary w-fit rounded-lg px-6 py-3 font-semibold transition inline-block">Book a Demo</a>
                     </div>
-                    <div class="grid gap-5 md:grid-cols-3">
-                        <article class="quote-card rounded-2xl p-6">
-                            <div class="text-5xl font-black text-[var(--lime)]">70%</div>
-                            <h3 class="mt-4 text-xl font-black">less time on script maintenance</h3>
-                            <p class="mt-4 leading-7 text-slate-400">Eliminate the effort of writing, debugging, and fixing brittle selectors every time the UI changes.</p>
+                    <div class="grid gap-4 md:grid-cols-3">
+                        <article class="quote-card rounded-xl p-6">
+                            <div class="text-4xl font-bold" style="color: var(--blue);">80%</div>
+                            <h3 class="mt-4 text-lg font-semibold" style="color: var(--text);">less time on script maintenance</h3>
+                            <p class="mt-3 text-sm leading-7" style="color: var(--muted);">Eliminate the effort of writing, debugging, and fixing brittle selectors every time the UI changes.</p>
                         </article>
-                        <article class="quote-card rounded-2xl p-6">
-                            <div class="text-5xl font-black text-[var(--cyan)]">10×</div>
-                            <h3 class="mt-4 text-xl font-black">faster test creation</h3>
-                            <p class="mt-4 leading-7 text-slate-400">Upload documents instead of writing code. Turn existing test cases into live browser sessions instantly.</p>
+                        <article class="quote-card rounded-xl p-6">
+                            <div class="text-4xl font-bold" style="color: var(--blue);">10×</div>
+                            <h3 class="mt-4 text-lg font-semibold" style="color: var(--text);">faster test creation</h3>
+                            <p class="mt-3 text-sm leading-7" style="color: var(--muted);">Upload documents instead of writing code. Turn existing test cases into live browser sessions instantly.</p>
                         </article>
-                        <article class="quote-card rounded-2xl p-6">
-                            <div class="text-5xl font-black text-[var(--coral)]">100%</div>
-                            <h3 class="mt-4 text-xl font-black">coverage of complex workflows</h3>
-                            <p class="mt-4 leading-7 text-slate-400">Automate Salesforce, ERP, and internal tools — the enterprise flows traditional automation can't reach.</p>
+                        <article class="quote-card rounded-xl p-6">
+                            <div class="text-4xl font-bold" style="color: var(--blue);">100%</div>
+                            <h3 class="mt-4 text-lg font-semibold" style="color: var(--text);">coverage of complex workflows</h3>
+                            <p class="mt-3 text-sm leading-7" style="color: var(--muted);">Automate Salesforce, ERP, and internal tools — the enterprise flows traditional automation can't reach.</p>
                         </article>
                     </div>
                 </div>
             </section>
 
+            <!-- FAQ -->
             <section id="resource" class="section-muted px-5 py-24">
                 <div class="mx-auto max-w-4xl">
                     <div class="mb-10 text-center">
-                        <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--lime)]">FAQ</p>
-                        <h2 class="text-4xl font-black md:text-6xl">Questions teams ask first.</h2>
+                        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.15em]" style="color: var(--blue);">FAQ</p>
+                        <h2 class="text-3xl font-bold md:text-4xl" style="color: var(--text);">Questions teams ask first.</h2>
                     </div>
                     <div class="space-y-4">
                         <div class="faq-item rounded-2xl">
-                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
+                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-semibold" style="color: var(--text);" onclick="toggleAccordion(this)">
                                 <span>How does CmdRunner execute test cases from a document?</span>
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
@@ -278,7 +493,7 @@
                             </div>
                         </div>
                         <div class="faq-item rounded-2xl">
-                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
+                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-semibold" style="color: var(--text);" onclick="toggleAccordion(this)">
                                 <span>How is this different from Selenium or Playwright?</span>
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
@@ -287,7 +502,7 @@
                             </div>
                         </div>
                         <div class="faq-item rounded-2xl">
-                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
+                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-semibold" style="color: var(--text);" onclick="toggleAccordion(this)">
                                 <span>Can CmdRunner test enterprise applications like Salesforce or ERP systems?</span>
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
@@ -296,7 +511,7 @@
                             </div>
                         </div>
                         <div class="faq-item rounded-2xl">
-                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
+                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-semibold" style="color: var(--text);" onclick="toggleAccordion(this)">
                                 <span>What file formats are supported?</span>
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
@@ -305,7 +520,7 @@
                             </div>
                         </div>
                         <div class="faq-item rounded-2xl">
-                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-black" onclick="toggleAccordion(this)">
+                            <button class="accordion-header flex w-full items-center justify-between gap-4 p-5 text-left font-semibold" style="color: var(--text);" onclick="toggleAccordion(this)">
                                 <span>Who is CmdRunner built for?</span>
                                 <span class="toggle-icon text-2xl">+</span>
                             </button>
@@ -318,33 +533,39 @@
             </section>
         </main>
 
-        <footer class="border-t border-white/10 bg-transparent px-5 py-12 text-slate-400">
+        <footer class="border-t px-5 py-12" style="border-color: var(--line); color: var(--dim);">
             <div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
                 <div class="flex items-center gap-3">
-                    <span class="brand-mark flex h-10 w-10 items-center justify-center rounded-xl text-sm font-black text-slate-950">CR</span>
+                    <img src="{{ url_for('static', filename='images/logo-with-name.jpeg') }}" alt="CmdRunner" class="h-8 w-auto">
                     <div>
-                        <div class="font-black text-white">CmdRunner</div>
-                        <div class="text-sm">Document-led AI browser automation.</div>
+                        <div class="text-sm" style="color: var(--dim);">Document-led AI browser automation.</div>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row gap-6 text-sm font-semibold">
+                <div class="flex flex-col md:flex-row gap-6 text-sm font-medium">
                     <div class="flex gap-6">
-                        <a href="#platform" class="hover:text-white">Workflow</a>
-                        <a href="/why" class="hover:text-white">Features</a>
-                        <a href="/resource" class="hover:text-white">FAQ</a>
+                        <a href="#platform" class="hover:text-[#2563EB] transition">Workflow</a>
+                        <a href="/why" class="hover:text-[#2563EB] transition">Features</a>
+                        <a href="/resource" class="hover:text-[#2563EB] transition">Resources</a>
                     </div>
-                    <div class="flex gap-6 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-6">
-                        <a href="/privacy" class="hover:text-white transition">Privacy Policy</a>
-                        <a href="/terms" class="hover:text-white transition">Terms of Service</a>
-                        <a href="/refund" class="hover:text-white transition">Refund Policy</a>
+                    <div class="flex gap-6 border-t md:border-t-0 md:border-l pt-6 md:pt-0 md:pl-6" style="border-color: var(--line);">
+                        <a href="/privacy" class="hover:text-[#2563EB] transition">Privacy Policy</a>
+                        <a href="/terms" class="hover:text-[#2563EB] transition">Terms of Service</a>
+                        <a href="/refund" class="hover:text-[#2563EB] transition">Refund Policy</a>
                     </div>
                 </div>
                 <p class="text-sm">&copy; 2026 CmdRunner. All rights reserved.</p>
             </div>
         </footer>
     </div>
-
     <!-- GA tracking helpers and accordion/video are in main.js -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var v2 = document.getElementById('vid-step2');
+            var v4 = document.getElementById('vid-step4');
+            if (v2) { v2.playbackRate = 2; }
+            if (v4) { v4.playbackRate = 2; }
+        });
+    </script>
 
 </body>
 </html>

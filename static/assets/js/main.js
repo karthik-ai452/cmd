@@ -15,31 +15,6 @@
 
     window.safeTrack = safeTrack;
 
-    window.trackBeta = function () {
-        safeTrack('click_beta_button', {
-            event_category: 'engagement',
-            event_label: 'Request Beta Access'
-        });
-    };
-
-    window.trackDemo = function () {
-        safeTrack('click_demo_button', {
-            event_category: 'engagement',
-            event_label: 'Product Animation'
-        });
-        var demoSection = document.getElementById('demo');
-        if (demoSection) {
-            demoSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
-    window.trackSignup = function (email) {
-        safeTrack('sign_up', {
-            event_category: 'conversion',
-            event_label: email
-        });
-    };
-
     /* ---- FAQ Accordion ---- */
     window.toggleAccordion = function (headerElement) {
         var content = headerElement.nextElementSibling;

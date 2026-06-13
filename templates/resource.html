@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | CmdRunner AI Test Automation</title>
+    <meta name="description" content="Setup guides, documentation, and direct support to help you get the most out of CmdRunner.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cmdrunner.io/resource">
+    <meta property="og:title" content="Resources | CmdRunner AI Test Automation">
+    <meta property="og:description" content="Setup guides, documentation, and direct support to help you get the most out of CmdRunner.">
+
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/main.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7D4KCNFLXT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7D4KCNFLXT');
+    </script>
+
+    <script>
+    function copyCode(btn) {
+        var code = btn.previousElementSibling.querySelector('code');
+        navigator.clipboard.writeText(code.textContent).then(function() {
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+        });
+    }
+    </script>
+</head>
+<body>
+    <!-- Announcement Banner -->
+    <div id="cta-banner" class="sticky top-0 z-[60] relative" style="background: linear-gradient(135deg, #2563EB, #1D4ED8); cursor: pointer;" onclick="window.open('https://app.cmdrunner.com/register','_blank')">
+        <div class="mx-auto max-w-7xl flex items-center justify-center gap-4 px-5 py-3 text-center">
+            <div>
+                <span class="text-sm md:text-base font-semibold text-white">Cut QA Automation Costs by Up to 80%</span>
+                <span class="hidden sm:inline text-sm text-blue-100 ml-2">— Execute tests directly from documents — without writing or maintaining scripts.</span>
+            </div>
+            <svg class="w-4 h-4 text-blue-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+    </div>
+
+    <div class="page-aurora min-h-screen">
+        <nav class="nav-shell sticky top-[44px] z-50 w-full">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
+                <a href="/" class="flex items-center gap-3" aria-label="CmdRunner home">
+                    <img src="{{ url_for('static', filename='images/logo-with-name.jpeg') }}" alt="CmdRunner" class="h-[56px] w-auto">
+                </a>
+                <div class="hidden items-center gap-7 text-sm font-medium md:flex" style="color: var(--dim);">
+                    <a href="/why" class="hover:text-[#2563EB] transition">Why CmdRunner</a>
+                    <a href="/resource" class="hover:text-[#2563EB] transition">Resource</a>
+                    <a href="https://calendar.app.google/s2G5stLiU99N6u78A" target="_blank" class="btn-primary rounded-lg px-5 py-2.5 transition inline-block">Book a Demo</a>
+                </div>
+            </div>
+        </nav>
+
+        <main class="pt-8">
+            <!-- Hero -->
+            <section class="px-5 pb-24 pt-12">
+                <div class="mx-auto max-w-4xl text-center">
+                    <p class="mb-4 text-sm font-black uppercase tracking-[0.28em]" style="color: var(--blue);">Resources</p>
+                    <h1 class="text-4xl font-black tracking-tight md:text-6xl">Everything you need to get started and get help.</h1>
+                    <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-500">Setup guides, documentation, and direct support to help you get the most out of CmdRunner.</p>
+                </div>
+            </section>
+
+            <!-- Resource Cards -->
+            <section class="section-muted px-5 py-24">
+                <div class="mx-auto max-w-5xl">
+                    <div class="grid gap-6 md:grid-cols-2">
+                        <!-- Ngrok Setup Guide Card -->
+                        <article class="feature-box rounded-2xl p-8">
+                            <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-2xl">🚇</div>
+                            <h2 class="text-2xl font-black">Ngrok Setup Guide</h2>
+                            <p class="mt-4 leading-7 text-slate-500">Learn how to connect your local app to CmdRunner using Ngrok. Create a secure tunnel, get a public URL, and start testing in minutes.</p>
+                            <ul class="mt-5 space-y-2 text-slate-600">
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Signing up for Ngrok</li>
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Installing and configuring Ngrok</li>
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Running the tunnel and connecting to CmdRunner</li>
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Troubleshooting connection issues</li>
+                            </ul>
+                            <a href="#setup-guide" class="btn-primary mt-6 rounded-lg px-6 py-3 text-sm font-semibold transition inline-block">Jump to the guide ↓</a>
+                        </article>
+
+                        <!-- Support Card -->
+                        <article class="feature-box rounded-2xl p-8">
+                            <div class="feature-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-2xl">💬</div>
+                            <h2 class="text-2xl font-black">Support</h2>
+                            <p class="mt-4 leading-7 text-slate-500">Need help with CmdRunner? Whether it's a setup question, a bug report, or feedback on the platform — our team is here for you. Reach out directly and we'll get back to you as quickly as possible.</p>
+                            <ul class="mt-5 space-y-2 text-slate-600">
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Setup and configuration help</li>
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Bug reports and issue escalation</li>
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Feature requests and feedback</li>
+                                <li class="flex items-start gap-2"><span style="color: var(--blue);">→</span> Enterprise and billing inquiries</li>
+                            </ul>
+                            <a href="mailto:support@cmdrunner.com?subject=CmdRunner%20Support%20Request" class="btn-primary mt-6 rounded-lg px-6 py-3 text-sm font-semibold transition inline-block">support@cmdrunner.com</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Setup Guide -->
+            <section id="setup-guide" class="px-5 py-24">
+                <div class="mx-auto max-w-3xl">
+                    <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--coral)]">Setup Guide</p>
+                    <h2 class="text-3xl font-black leading-tight md:text-4xl">Connect your local app using Ngrok.</h2>
+                    <p class="mt-5 text-lg leading-8 text-slate-500">If your app isn't on a public staging server yet, you can use Ngrok to create a secure tunnel from your local machine. Follow these steps to get started.</p>
+
+                    <!-- Step 1 -->
+                    <div class="mt-12 space-y-8">
+                        <div class="feature-box rounded-2xl p-7">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="number-badge flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-black">1</div>
+                                <h3 class="text-xl font-black">Sign up for Ngrok</h3>
+                            </div>
+                            <p class="leading-7 text-slate-500">Head to <a href="https://ngrok.com/" target="_blank" class="font-semibold underline" style="color: var(--blue);">ngrok.com</a> and click on <strong>Sign up</strong>. The sign up process takes just 30 seconds — you can also sign up with a GitHub or Google account. Signing up is free.</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="feature-box rounded-2xl p-7">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="number-badge flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-black">2</div>
+                                <h3 class="text-xl font-black">Install Ngrok on your computer</h3>
+                            </div>
+                            <p class="leading-7 text-slate-500">After signing up, follow the instructions on the <a href="https://dashboard.ngrok.com/get-started/setup" target="_blank" class="font-semibold underline" style="color: var(--blue);">Ngrok setup page</a> to install it.</p>
+
+                            <p class="mt-4 text-sm font-semibold text-slate-700">Mac:</p>
+                            <div class="code-block mt-2 relative rounded-lg bg-slate-900 p-4 pr-20">
+                                <pre class="overflow-x-auto text-sm text-green-400"><code>brew install ngrok</code></pre>
+                                <button onclick="copyCode(this)" class="absolute right-3 top-3 rounded bg-white/10 px-2 py-1 text-xs text-white transition hover:bg-white/20">Copy</button>
+                            </div>
+
+                            <p class="mt-4 text-sm font-semibold text-slate-700">Linux:</p>
+                            <div class="code-block mt-2 relative rounded-lg bg-slate-900 p-4 pr-20">
+                                <pre class="overflow-x-auto text-sm text-green-400"><code>curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
+  | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null \
+  && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" \
+  | sudo tee /etc/apt/sources.list.d/ngrok.list \
+  && sudo apt update \
+  && sudo apt install ngrok</code></pre>
+                                <button onclick="copyCode(this)" class="absolute right-3 top-3 rounded bg-white/10 px-2 py-1 text-xs text-white transition hover:bg-white/20">Copy</button>
+                            </div>
+
+                            <p class="mt-4 text-sm font-semibold text-slate-700">Windows:</p>
+                            <div class="code-block mt-2 relative rounded-lg bg-slate-900 p-4 pr-20">
+                                <pre class="overflow-x-auto text-sm text-green-400"><code>choco install ngrok</code></pre>
+                                <button onclick="copyCode(this)" class="absolute right-3 top-3 rounded bg-white/10 px-2 py-1 text-xs text-white transition hover:bg-white/20">Copy</button>
+                            </div>
+                            <p class="mt-3 text-sm text-slate-500">Or download the executable from the Ngrok website.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="feature-box rounded-2xl p-7">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="number-badge flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-black">3</div>
+                                <h3 class="text-xl font-black">Set your auth token</h3>
+                            </div>
+                            <p class="leading-7 text-slate-500">Once installed, add your Ngrok authentication token. You'll find the command with your token on the <a href="https://dashboard.ngrok.com/get-started/setup" target="_blank" class="font-semibold underline" style="color: var(--blue);">Ngrok setup page</a>.</p>
+                            <div class="code-block mt-4 relative rounded-lg bg-slate-900 p-4 pr-20">
+                                <pre class="overflow-x-auto text-sm text-green-400"><code>ngrok config add-authtoken YOUR_AUTH_TOKEN_HERE</code></pre>
+                                <button onclick="copyCode(this)" class="absolute right-3 top-3 rounded bg-white/10 px-2 py-1 text-xs text-white transition hover:bg-white/20">Copy</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="feature-box rounded-2xl p-7">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="number-badge flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-black">4</div>
+                                <h3 class="text-xl font-black">Run the Ngrok tunnel</h3>
+                            </div>
+                            <p class="leading-7 text-slate-500">Run the following command to start a tunnel. You need the URL to your local development environment (protocol, host and port).</p>
+                            <div class="code-block mt-4 relative rounded-lg bg-slate-900 p-4 pr-20">
+                                <pre class="overflow-x-auto text-sm text-green-400"><code>ngrok http DEV_ENV_URL --host-header=rewrite</code></pre>
+                                <button onclick="copyCode(this)" class="absolute right-3 top-3 rounded bg-white/10 px-2 py-1 text-xs text-white transition hover:bg-white/20">Copy</button>
+                            </div>
+                            <p class="mt-3 leading-7 text-slate-500">For example, if your app runs on <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm font-mono text-slate-700">localhost:8080</code>:</p>
+                            <div class="code-block mt-2 relative rounded-lg bg-slate-900 p-4 pr-20">
+                                <pre class="overflow-x-auto text-sm text-green-400"><code>ngrok http http://localhost:8080 --host-header=rewrite</code></pre>
+                                <button onclick="copyCode(this)" class="absolute right-3 top-3 rounded bg-white/10 px-2 py-1 text-xs text-white transition hover:bg-white/20">Copy</button>
+                            </div>
+                            <div class="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
+                                <p class="text-sm leading-6 text-amber-800"><strong>Note:</strong> The URL doesn't have to be localhost. It can also be a domain or IP on your local network (e.g. <code class="font-mono">http://our-server.local</code>) or on the public internet but behind a firewall. Don't add a path — only protocol, domain and port.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="feature-box rounded-2xl p-7">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="number-badge flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-black">5</div>
+                                <h3 class="text-xl font-black">Give CmdRunner the Ngrok URL</h3>
+                            </div>
+                            <p class="leading-7 text-slate-500">In your test case file, mention the <strong>Ngrok Forwarding URL</strong> that Ngrok gives you after starting the tunnel. Copy it from the Ngrok terminal output.</p>
+                            <p class="mt-3 text-sm font-semibold text-slate-700">Ngrok Forwarding URL:</p>
+                            <div class="code-block mt-2 relative rounded-lg bg-slate-900 p-4 pr-20">
+                                <pre class="overflow-x-auto text-sm text-green-400"><code>https://a123-45-678-90-123.ngrok-free.app</code></pre>
+                                <button onclick="copyCode(this)" class="absolute right-3 top-3 rounded bg-white/10 px-2 py-1 text-xs text-white transition hover:bg-white/20">Copy</button>
+                            </div>
+                            <p class="mt-3 leading-7 text-slate-500">Now you can upload the test case file to CmdRunner and it will have access to your local development environment.</p>
+                            <div class="mt-4 rounded-lg border border-red-200 bg-red-50 p-4">
+                                <p class="text-sm leading-6 text-red-700"><strong>Important:</strong> The Ngrok tunnel must be running while CmdRunner is performing the tests.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success callout -->
+                    <div class="mt-8 rounded-2xl border border-green-200 bg-green-50 p-6 text-center">
+                        <p class="text-2xl font-black text-green-700">That's it! ✅</p>
+                        <p class="mt-2 leading-7 text-slate-600">Your Ngrok tunnel is running and CmdRunner can reach your local app. Head back to the app and run your first test.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Troubleshooting -->
+            <section class="section-muted px-5 py-24">
+                <div class="mx-auto max-w-3xl">
+                    <h2 class="text-3xl font-black leading-tight md:text-4xl">Troubleshooting</h2>
+                    <div class="mt-8 space-y-5">
+                        <div class="feature-box rounded-2xl p-6">
+                            <h3 class="text-lg font-black">"Connection refused" or timeout</h3>
+                            <p class="mt-3 leading-7 text-slate-500">Make sure your local dev server is running before starting the Ngrok tunnel. Double-check the port number matches (e.g. 8080, 3000, 5000).</p>
+                        </div>
+                        <div class="feature-box rounded-2xl p-6">
+                            <h3 class="text-lg font-black">Ngrok tunnel not starting</h3>
+                            <p class="mt-3 leading-7 text-slate-500">Verify your auth token is set correctly with <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm font-mono text-slate-700">ngrok config add-authtoken</code>. You can check your auth status on the Ngrok dashboard.</p>
+                        </div>
+                        <div class="feature-box rounded-2xl p-6">
+                            <h3 class="text-lg font-black">Page loads but CmdRunner can't interact</h3>
+                            <p class="mt-3 leading-7 text-slate-500">Your app may require authentication. Make sure the pages you want to test are accessible, or provide the necessary credentials in your test run configuration.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Support CTA -->
+            <section class="px-5 py-24">
+                <div class="mx-auto max-w-4xl text-center">
+                    <p class="mb-4 text-sm font-black uppercase tracking-[0.28em] text-[var(--coral)]">Need help?</p>
+                    <h2 class="text-3xl font-black leading-tight md:text-5xl">Still stuck? We're here to help.</h2>
+                    <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-500">Whether it's a setup question, a bug report, or feedback on the platform — reach out to our team and we'll get back to you as quickly as possible.</p>
+                    <ul class="mx-auto mt-6 flex max-w-lg flex-col gap-2 text-slate-600 sm:grid sm:grid-cols-2 sm:gap-x-8">
+                        <li class="flex items-center gap-2"><span style="color: var(--blue);">→</span> Setup and configuration help</li>
+                        <li class="flex items-center gap-2"><span style="color: var(--blue);">→</span> Bug reports and issue escalation</li>
+                        <li class="flex items-center gap-2"><span style="color: var(--blue);">→</span> Feature requests and feedback</li>
+                        <li class="flex items-center gap-2"><span style="color: var(--blue);">→</span> Enterprise and billing inquiries</li>
+                    </ul>
+                    <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+                        <a href="mailto:support@cmdrunner.com?subject=CmdRunner%20Support%20Request" class="btn-primary rounded-lg px-8 py-4 text-base font-semibold transition inline-block">Email us</a>
+                        <span class="flex items-center justify-center text-slate-500">support@cmdrunner.com</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="border-t px-5 py-12" style="border-color: var(--line); color: var(--dim);">
+            <div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="{{ url_for('static', filename='images/logo-with-name.jpeg') }}" alt="CmdRunner" class="h-8 w-auto">
+                    <div>
+                        <div class="text-sm" style="color: var(--dim);">Document-led AI browser automation.</div>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-6 text-sm font-medium">
+                    <div class="flex gap-6">
+                        <a href="/#platform" class="hover:text-[#2563EB] transition">Workflow</a>
+                        <a href="/why" class="hover:text-[#2563EB] transition">Features</a>
+                        <a href="/resource" class="hover:text-[#2563EB] transition">Resources</a>
+                    </div>
+                    <div class="flex gap-6 border-t md:border-t-0 md:border-l pt-6 md:pt-0 md:pl-6" style="border-color: var(--line);">
+                        <a href="/privacy" class="hover:text-[#2563EB] transition">Privacy Policy</a>
+                        <a href="/terms" class="hover:text-[#2563EB] transition">Terms of Service</a>
+                        <a href="/refund" class="hover:text-[#2563EB] transition">Refund Policy</a>
+                    </div>
+                </div>
+                <p class="text-sm">&copy; 2026 CmdRunner. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    function copyCode(btn) {
+        var code = btn.previousElementSibling.querySelector('code');
+        navigator.clipboard.writeText(code.textContent).then(function() {
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>
